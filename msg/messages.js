@@ -1183,3 +1183,11 @@ Blockly.Msg.PROCEDURES_IFRETURN_TOOLTIP = 'If a value is true, then return a sec
 Blockly.Msg.PROCEDURES_IFRETURN_HELPURL = 'http://c2.com/cgi/wiki?GuardClause';
 /// warning - This appears if the user tries to use this block outside of a function definition.
 Blockly.Msg.PROCEDURES_IFRETURN_WARNING = 'Warning: This block may be used only within a function definition.';
+
+// Search blocks.
+/// button - This appears in the search button if the filters list is empty.
+Blockly.Msg.SEARCH_BUTTON = 'Search…';
+/// button - This appears in the search button if the filters list is not empty.
+Blockly.Msg.SEARCHING_BUTTON = 'Searching for ';
+/// prompt - This appears in the prompt used to input search filters.
+Blockly.Msg.SEARCH_PROMPT = 'Enter search filters.';

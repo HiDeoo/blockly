@@ -1529,3 +1529,44 @@ Blockly.Block.prototype.toDevString = function() {
   }
   return msg;
 };
+
+/**
+ * Search the block for specific filters.
+ * @param {!Array.<string>} filters Array of filters to search for.
+ * @return {boolean} True if the search matches the block.
+ */
+Blockly.Block.prototype.search = function(filters) {
+  var fields = [this.type, this.getTooltip()];
+  for (var i = 0, input; input = this.inputList[i]; i++) {
+    if (typeof input.name != 'undefined' && input.name.length > 0) {
+      fields.push(input.name);
+    }
+    for (var j = 0, field; field = input.fieldRow[j]; j++) {
+      fields.push(field.getText(), field.getValue());
+      if (typeof field.name != 'undefined' && field.name.length > 0) {
+        fields.push(field.name);
+      }
+    }
+  }
+  var found = true;
+  fields = fields.join(' ').toLowerCase();
+  for (var i = 0, filter; filter = filters[i]; i++) {
+    found = found && fields.includes(filter.toLowerCase());
+  }
+  return found;
+};
+
+/**
+ * Returns the tooltip of the block.
+ * @param {string|!Function} tooltip The tooltip or tooltip getter.
+ * @return {string} The tooltip.
+ */
+Blockly.Block.prototype.getTooltip = function(tooltip) {
+  if (!tooltip) {
+    tooltip = this.tooltip;
+  }
+  if (!(tooltip instanceof Function)) {
+    return tooltip;
+  }
+  return this.getTooltip(tooltip());
+};
