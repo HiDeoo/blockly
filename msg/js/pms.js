@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Scancelé un coment";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Arnomé la variàbil...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Arnomé tute le variàbij '%1' 'me:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "a %1 taché ël test %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Taché dël test a la variàbil '%1'.";

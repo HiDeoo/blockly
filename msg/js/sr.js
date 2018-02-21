@@ -8,7 +8,7 @@ goog.require('Blockly.Msg');
 
 /** @export */ Blockly.Msg.ADD_COMMENT = "Додај коментар";
 /** @export */ Blockly.Msg.CANNOT_DELETE_VARIABLE_PROCEDURE = "Не могу да обришем варијаблу ’%1’ јер је део дефиниције функције ’%2’";
-/** @export */ Blockly.Msg.CHANGE_VALUE_TITLE = "Промените вредност:";
+/** @export */ Blockly.Msg.CHANGE_VALUE_TITLE = "Промени вредност:";
 /** @export */ Blockly.Msg.CLEAN_UP = "Уклони блокове";
 /** @export */ Blockly.Msg.COLLAPSE_ALL = "Скупи блокове";
 /** @export */ Blockly.Msg.COLLAPSE_BLOCK = "Скупи блок";
@@ -313,7 +313,10 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REDO = "Понови";
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Уклони коментар";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Преименуј променљиву…";
-/** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Преименујте све „%1“ променљиве у:";
+/** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Преименуј све „%1“ променљиве у:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "на %1 додај текст %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Додајте текст на променљиву „%1“.";

@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Yorumu Sil";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Değişkeni yeniden adlandır...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Tüm '%1' değişkenlerini yeniden isimlendir:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "%1 için %2 metnini ekle.";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Değişken '%1' e bazı metinler ekleyin.";

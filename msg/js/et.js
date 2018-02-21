@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Eemalda kommentaar";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Nimeta muutuja ümber ...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Muutuja „%1“ uus nimi:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "lisa muutuja %1 lõppu tekst %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Lisab teksti muutuja „%1“ väärtuse lõppu.";

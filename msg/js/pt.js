@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Remover Comentário";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Renomear variável...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Renomear todas as variáveis '%1' para:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "para %1 acrescentar texto %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Acrescentar um pedaço de texto à variável \"%1\".";
@@ -329,7 +332,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.TEXT_CHARAT_LAST = "obter última letra";
 /** @export */ Blockly.Msg.TEXT_CHARAT_RANDOM = "obter letra aleatória";
 /** @export */ Blockly.Msg.TEXT_CHARAT_TAIL = "";  // untranslated
-/** @export */ Blockly.Msg.TEXT_CHARAT_TITLE = "in text %1 %2";  // untranslated
+/** @export */ Blockly.Msg.TEXT_CHARAT_TITLE = "no texto %1 %2";
 /** @export */ Blockly.Msg.TEXT_CHARAT_TOOLTIP = "Retorna a letra na posição especificada.";
 /** @export */ Blockly.Msg.TEXT_COUNT_HELPURL = "https://github.com/google/blockly/wiki/Text#counting-substrings";
 /** @export */ Blockly.Msg.TEXT_COUNT_MESSAGE0 = "contar %1 em %2";
@@ -393,7 +396,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.VARIABLES_SET_HELPURL = "https://github.com/google/blockly/wiki/Variables#set";  // untranslated
 /** @export */ Blockly.Msg.VARIABLES_SET_TOOLTIP = "Define esta variável para o valor inserido.";
 /** @export */ Blockly.Msg.VARIABLE_ALREADY_EXISTS = "Já existe uma variável com o nome de '%1'.";
-/** @export */ Blockly.Msg.VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE = "A variable named '%1' already exists for another variable of type '%2'.";  // untranslated
+/** @export */ Blockly.Msg.VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE = "Já existe uma variável chamada '%1' para outra variável do tipo '%2'.";
 /** @export */ Blockly.Msg.PROCEDURES_DEFRETURN_TITLE = Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE;
 /** @export */ Blockly.Msg.CONTROLS_IF_IF_TITLE_IF = Blockly.Msg.CONTROLS_IF_MSG_IF;
 /** @export */ Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO = Blockly.Msg.CONTROLS_REPEAT_INPUT_DO;

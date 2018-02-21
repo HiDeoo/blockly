@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Lemel an evezhiadenn kuit";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Adenvel an argemmenn...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Adenvel an holl argemmennoù '%1' e :";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "Ouzhpennañ an destenn %2 da %1";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Ouzhpennañ testenn d'an argemmenn'%1'.";

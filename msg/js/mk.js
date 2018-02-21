@@ -40,7 +40,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.CONTROLS_FOREACH_TOOLTIP = "Му ја задава променливата „%1“ на секој елемент на списокот, а потоа исполнува наредби.";
 /** @export */ Blockly.Msg.CONTROLS_FOR_HELPURL = "https://github.com/google/blockly/wiki/Loops#count-with";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FOR_TITLE = "број со %1 од %2 до %3 со %4";
-/** @export */ Blockly.Msg.CONTROLS_FOR_TOOLTIP = "Променливата \"%1\" да ги земе вредностите од почетниот до завршниот број, броејќи според укажаниот интервал и ги исполнува укажаните блокови.";
+/** @export */ Blockly.Msg.CONTROLS_FOR_TOOLTIP = "Променливата „%1“ да ги земе вредностите од почетниот до завршниот број, броејќи според укажаниот интервал и ги исполнува укажаните блокови.";
 /** @export */ Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP = "Add a condition to the if block.";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP = "Add a final, catch-all condition to the if block.";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_IF_HELPURL = "https://github.com/google/blockly/wiki/IfElse";  // untranslated
@@ -286,7 +286,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.ORDINAL_NUMBER_SUFFIX = "";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_ALLOW_STATEMENTS = "allow statements";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_BEFORE_PARAMS = "with:";  // untranslated
-/** @export */ Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL = "https://en.wikipedia.org/wiki/Subroutine";  // untranslated
+/** @export */ Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL = "https://mk.wikipedia.org/wiki/Потпрограма";
 /** @export */ Blockly.Msg.PROCEDURES_CALLNORETURN_TOOLTIP = "Run the user-defined function '%1'.";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_CALLRETURN_HELPURL = "https://en.wikipedia.org/wiki/Subroutine";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_CALLRETURN_TOOLTIP = "Run the user-defined function '%1' and use its output.";  // untranslated
@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Отстрани коментар";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Преименувај променлива...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Преименувај ги сите променливи „%1“ во:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "to %1 append text %2";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Append some text to variable '%1'.";  // untranslated
@@ -382,7 +385,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.TEXT_TRIM_OPERATOR_LEFT = "trim spaces from left side of";  // untranslated
 /** @export */ Blockly.Msg.TEXT_TRIM_OPERATOR_RIGHT = "trim spaces from right side of";  // untranslated
 /** @export */ Blockly.Msg.TEXT_TRIM_TOOLTIP = "Return a copy of the text with spaces removed from one or both ends.";  // untranslated
-/** @export */ Blockly.Msg.TODAY = "Today";  // untranslated
+/** @export */ Blockly.Msg.TODAY = "Денес";
 /** @export */ Blockly.Msg.UNDO = "Undo";  // untranslated
 /** @export */ Blockly.Msg.VARIABLES_DEFAULT_NAME = "елемент";
 /** @export */ Blockly.Msg.VARIABLES_GET_CREATE_SET = "Create 'set %1'";  // untranslated

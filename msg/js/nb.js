@@ -228,7 +228,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "x";
 /** @export */ Blockly.Msg.MATH_NUMBER_HELPURL = "https://en.wikipedia.org/wiki/Number";
 /** @export */ Blockly.Msg.MATH_NUMBER_TOOLTIP = "Et tall.";
-/** @export */ Blockly.Msg.MATH_ONLIST_HELPURL = "";
+/** @export */ Blockly.Msg.MATH_ONLIST_HELPURL = "";  // untranslated
 /** @export */ Blockly.Msg.MATH_ONLIST_OPERATOR_AVERAGE = "gjennomsnittet av listen";
 /** @export */ Blockly.Msg.MATH_ONLIST_OPERATOR_MAX = "maksimum av liste";
 /** @export */ Blockly.Msg.MATH_ONLIST_OPERATOR_MEDIAN = "medianen til listen";
@@ -283,7 +283,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.MATH_TRIG_TOOLTIP_TAN = "Returner tangenten av en vinkel (ikke radian).";
 /** @export */ Blockly.Msg.NEW_VARIABLE = "Opprett variabel…";
 /** @export */ Blockly.Msg.NEW_VARIABLE_TITLE = "Nytt variabelnavn:";
-/** @export */ Blockly.Msg.ORDINAL_NUMBER_SUFFIX = "";
+/** @export */ Blockly.Msg.ORDINAL_NUMBER_SUFFIX = "";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_ALLOW_STATEMENTS = "tillat uttalelser";
 /** @export */ Blockly.Msg.PROCEDURES_BEFORE_PARAMS = "med:";
 /** @export */ Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL = "https://en.wikipedia.org/wiki/Subroutine";
@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Fjern kommentar";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Gi nytt navn til variabel…";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Endre navnet til alle '%1' variabler til:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "til %1, legg til teksten %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Tilføy tekst til variabelen '%1'.";

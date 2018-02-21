@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "ಟಿಪ್ಪಣಿನ್ ದೆತ್ತ್‌ದ್ ಬುಡ್ಲೆ";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "ವ್ಯತ್ಯಯೊಗು ಕುಡೊರ ಪುದರ್ ದೀಲೆ";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "ಮಾತಾ '%1' ವ್ಯತ್ಯಯೊಲೆನ ಪುದರ್‌ನ್ ನೆಕ್ಕ್ ಬದಲ್ ಮಲ್ಪುಲೆ:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "ಇಂದೆಕ್ %1 ಪಟ್ಯೊನು ಸೇರವೆ %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "%1 ವ್ಯತ್ಯಯೊಗು ಕೆಲವು ಪಟ್ಯೊಲೆನ್ ಸೇರಾವ್";

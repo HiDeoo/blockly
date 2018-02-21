@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "내용 제거";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "변수 이름 바꾸기:";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "'%1' 변수 이름을 바꾸기:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "다음 %1 내용 덧붙이기 %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "'%1' 변수의 끝에 일부 텍스트를 덧붙입니다.";

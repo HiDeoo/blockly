@@ -74,9 +74,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Entrata externe";
 /** @export */ Blockly.Msg.HELP = "Adjuta";
 /** @export */ Blockly.Msg.INLINE_INPUTS = "Entrata interne";
-/** @export */ Blockly.Msg.IOS_CANCEL = "Cancel";  // untranslated
-/** @export */ Blockly.Msg.IOS_ERROR = "Error";  // untranslated
-/** @export */ Blockly.Msg.IOS_OK = "OK";  // untranslated
+/** @export */ Blockly.Msg.IOS_CANCEL = "Cancellar";
+/** @export */ Blockly.Msg.IOS_ERROR = "Error";
+/** @export */ Blockly.Msg.IOS_OK = "OK";
 /** @export */ Blockly.Msg.IOS_PROCEDURES_ADD_INPUT = "+ Add Input";  // untranslated
 /** @export */ Blockly.Msg.IOS_PROCEDURES_ALLOW_STATEMENTS = "Allow statements";  // untranslated
 /** @export */ Blockly.Msg.IOS_PROCEDURES_DUPLICATE_INPUTS_ERROR = "This function has duplicate inputs.";  // untranslated
@@ -281,7 +281,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.MATH_TRIG_TOOLTIP_COS = "Retornar le cosino de un grado (non radiano).";
 /** @export */ Blockly.Msg.MATH_TRIG_TOOLTIP_SIN = "Retornar le sino de un grado (non radiano).";
 /** @export */ Blockly.Msg.MATH_TRIG_TOOLTIP_TAN = "Retornar le tangente de un grado (non radiano).";
-/** @export */ Blockly.Msg.NEW_VARIABLE = "Nove variabile...";
+/** @export */ Blockly.Msg.NEW_VARIABLE = "Crear variabile...";
 /** @export */ Blockly.Msg.NEW_VARIABLE_TITLE = "Nomine del nove variabile:";
 /** @export */ Blockly.Msg.ORDINAL_NUMBER_SUFFIX = "";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_ALLOW_STATEMENTS = "permitter declarationes";
@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Remover commento";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Renominar variabile...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Renominar tote le variabiles '%1' a:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "a %1 adjunger texto %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Adjunger un texto al variabile '%1'.";
@@ -392,7 +395,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.VARIABLES_SET_CREATE_GET = "Crear 'prender %1'";
 /** @export */ Blockly.Msg.VARIABLES_SET_HELPURL = "https://github.com/google/blockly/wiki/Variables#set";  // untranslated
 /** @export */ Blockly.Msg.VARIABLES_SET_TOOLTIP = "Mitte iste variabile al valor del entrata.";
-/** @export */ Blockly.Msg.VARIABLE_ALREADY_EXISTS = "A variable named '%1' already exists.";  // untranslated
+/** @export */ Blockly.Msg.VARIABLE_ALREADY_EXISTS = "A variabile named '%1' already exists.";
 /** @export */ Blockly.Msg.VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE = "A variable named '%1' already exists for another variable of type '%2'.";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_DEFRETURN_TITLE = Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE;
 /** @export */ Blockly.Msg.CONTROLS_IF_IF_TITLE_IF = Blockly.Msg.CONTROLS_IF_MSG_IF;

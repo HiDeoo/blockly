@@ -7,7 +7,7 @@ goog.provide('Blockly.Msg.fi');
 goog.require('Blockly.Msg');
 
 /** @export */ Blockly.Msg.ADD_COMMENT = "Lisää kommentti";
-/** @export */ Blockly.Msg.CANNOT_DELETE_VARIABLE_PROCEDURE = "Can't delete the variable '%1' because it's part of the definition of the function '%2'";  // untranslated
+/** @export */ Blockly.Msg.CANNOT_DELETE_VARIABLE_PROCEDURE = "Ei voida poistaa muuttujaa '%1' koska se on osa funktion määritelmää '%2'";
 /** @export */ Blockly.Msg.CHANGE_VALUE_TITLE = "Muuta arvoa:";
 /** @export */ Blockly.Msg.CLEAN_UP = "Siivoa lohkot";
 /** @export */ Blockly.Msg.COLLAPSE_ALL = "Sulje lohkot";
@@ -78,8 +78,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.IOS_ERROR = "Virhe";
 /** @export */ Blockly.Msg.IOS_OK = "OK";
 /** @export */ Blockly.Msg.IOS_PROCEDURES_ADD_INPUT = "+ Lisää syöte";
-/** @export */ Blockly.Msg.IOS_PROCEDURES_ALLOW_STATEMENTS = "Allow statements";  // untranslated
-/** @export */ Blockly.Msg.IOS_PROCEDURES_DUPLICATE_INPUTS_ERROR = "This function has duplicate inputs.";  // untranslated
+/** @export */ Blockly.Msg.IOS_PROCEDURES_ALLOW_STATEMENTS = "Salli selostukset";
+/** @export */ Blockly.Msg.IOS_PROCEDURES_DUPLICATE_INPUTS_ERROR = "Tällä toiminnolla on päällekkäisiä syöttöjä.";
 /** @export */ Blockly.Msg.IOS_PROCEDURES_INPUTS = "SYÖTTEET";
 /** @export */ Blockly.Msg.IOS_VARIABLES_ADD_BUTTON = "Lisää";
 /** @export */ Blockly.Msg.IOS_VARIABLES_ADD_VARIABLE = "+ Lisää muuttuja";
@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Poista kommentti";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Nimeä uudelleen muuttuja...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Nimeä uudelleen kaikki '%1' muuttujaa:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "muuttujaan %1 lisää teksti %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Lisää tekstiä muuttujaan '%1'.";

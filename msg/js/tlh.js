@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "QInHom chelHa'";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "lIw pong choH...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Hoch \"%1\" lIwmey pongmey choH:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "chel %1 ghItlh %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Append some text to variable '%1'.";  // untranslated

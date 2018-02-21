@@ -228,7 +228,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";
 /** @export */ Blockly.Msg.MATH_NUMBER_HELPURL = "https://ja.wikipedia.org/wiki/数";
 /** @export */ Blockly.Msg.MATH_NUMBER_TOOLTIP = "数です。";
-/** @export */ Blockly.Msg.MATH_ONLIST_HELPURL = "";
+/** @export */ Blockly.Msg.MATH_ONLIST_HELPURL = "";  // untranslated
 /** @export */ Blockly.Msg.MATH_ONLIST_OPERATOR_AVERAGE = "リストの平均";
 /** @export */ Blockly.Msg.MATH_ONLIST_OPERATOR_MAX = "リストの最大値";
 /** @export */ Blockly.Msg.MATH_ONLIST_OPERATOR_MEDIAN = "リストの中央値";
@@ -283,7 +283,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.MATH_TRIG_TOOLTIP_TAN = "（ラジアンではなく）度数の正接（tan）を返す。";
 /** @export */ Blockly.Msg.NEW_VARIABLE = "変数の作成…";
 /** @export */ Blockly.Msg.NEW_VARIABLE_TITLE = "新しい変数の名前：";
-/** @export */ Blockly.Msg.ORDINAL_NUMBER_SUFFIX = "";
+/** @export */ Blockly.Msg.ORDINAL_NUMBER_SUFFIX = "";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_ALLOW_STATEMENTS = "ステートメントを許可";
 /** @export */ Blockly.Msg.PROCEDURES_BEFORE_PARAMS = "対象：";
 /** @export */ Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL = "https://ja.wikipedia.org/wiki/サブルーチン";
@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "コメントを削除";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "変数の名前を変える…";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "選択した%1の変数すべての名前を変える：";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "項目 %1 へテキストを追加 %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "変数 '%1' にテキストを追加。";

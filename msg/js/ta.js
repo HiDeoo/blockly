@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "கருத்தை நீக்கு";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "மாறிலியை மறுபெயரிடுக...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "அனைத்து '%1' மாறிலிகளையும் பின்வருமாறு மறுபெயரிடுக:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "இந்த மாறியிற்கு %1 உரை சேர்க்க %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "'%1' மாறியில் உரையை சேர்";

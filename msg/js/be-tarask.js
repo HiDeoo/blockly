@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Выдаліць камэнтар";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Перайменаваць зьменную…";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Перайменаваць усе назвы зьменных '%1' на:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "да %1 дадаць тэкст %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Дадаць які-небудзь тэкст да зьменнай '%1'.";

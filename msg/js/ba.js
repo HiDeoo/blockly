@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Аңлатмаларҙы юйырға";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Үҙгәреүсәндең исемен алмаштырырға...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Бөтә '%1' үҙгәреүсәндәрҙең исемен ошолай алмаштырырға:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "to %1 append text %2";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Үҙгәреүсән «%1»-гә текст өҫтәргә.";

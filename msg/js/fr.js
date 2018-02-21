@@ -282,7 +282,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.MATH_TRIG_TOOLTIP_SIN = "Renvoie le sinus d’un angle en degrés (pas en radians).";
 /** @export */ Blockly.Msg.MATH_TRIG_TOOLTIP_TAN = "Renvoie la tangente d’un angle en degrés (pas en radians).";
 /** @export */ Blockly.Msg.NEW_VARIABLE = "Créer une variable...";
-/** @export */ Blockly.Msg.NEW_VARIABLE_TITLE = "Nouveau nom de la variable :";
+/** @export */ Blockly.Msg.NEW_VARIABLE_TITLE = "Le nom de la nouvelle variable :";
 /** @export */ Blockly.Msg.ORDINAL_NUMBER_SUFFIX = "";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_ALLOW_STATEMENTS = "autoriser les ordres";
 /** @export */ Blockly.Msg.PROCEDURES_BEFORE_PARAMS = "avec :";
@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Supprimer un commentaire";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Renommer la variable…";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Renommer toutes les variables « %1 » en :";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "ajouter le texte %2 à %1";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Ajouter du texte à la variable '%1'.";

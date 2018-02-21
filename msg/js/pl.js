@@ -104,7 +104,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.LISTS_GET_INDEX_LAST = "ostatni";
 /** @export */ Blockly.Msg.LISTS_GET_INDEX_RANDOM = "losowy";
 /** @export */ Blockly.Msg.LISTS_GET_INDEX_REMOVE = "usuń";
-/** @export */ Blockly.Msg.LISTS_GET_INDEX_TAIL = "";
+/** @export */ Blockly.Msg.LISTS_GET_INDEX_TAIL = "";  // untranslated
 /** @export */ Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_GET_FIRST = "Zwraca pierwszy element z listy.";
 /** @export */ Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_GET_FROM = "Zwraca element z konkretnej pozycji na liście.";
 /** @export */ Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_GET_LAST = "Zwraca ostatni element z listy.";
@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Usuń komentarz";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Zmień nazwę zmiennej...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Zmień nazwy wszystkich '%1' zmiennych na:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "dodaj tekst %2 do %1";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Dołącz tekst do zmiennej '%1'.";

@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "删除注释";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "重命名变量...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "将所有“%1”变量重命名为:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "至%1附加文本%2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "将一些文本追加到变量“%1”。";
@@ -388,7 +391,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.VARIABLES_GET_CREATE_SET = "创建“设定%1”";
 /** @export */ Blockly.Msg.VARIABLES_GET_HELPURL = "https://github.com/google/blockly/wiki/Variables#get";  // untranslated
 /** @export */ Blockly.Msg.VARIABLES_GET_TOOLTIP = "返回此变量的值。";
-/** @export */ Blockly.Msg.VARIABLES_SET = "赋值 %1 到 %2";
+/** @export */ Blockly.Msg.VARIABLES_SET = "赋值 %1 为 %2";
 /** @export */ Blockly.Msg.VARIABLES_SET_CREATE_GET = "创建“获得%1”";
 /** @export */ Blockly.Msg.VARIABLES_SET_HELPURL = "https://github.com/google/blockly/wiki/Variables#set";  // untranslated
 /** @export */ Blockly.Msg.VARIABLES_SET_TOOLTIP = "设置此变量，以使它和输入值相等。";

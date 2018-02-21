@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Pašalinti komentarą";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Pervardyti kintamajį...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Pervadinti visus '%1' kintamuosius į:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "prie %1 pridėk tekstą %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Pridėti tekstą prie kintamojo '%1'.";

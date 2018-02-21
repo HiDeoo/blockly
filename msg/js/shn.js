@@ -6,12 +6,12 @@ goog.provide('Blockly.Msg.shn');
 
 goog.require('Blockly.Msg');
 
-/** @export */ Blockly.Msg.ADD_COMMENT = "သႂ်ႇၶေႃႈၵႂၢမ်း";
+/** @export */ Blockly.Msg.ADD_COMMENT = "သႂ်ႇၶေႃႈၶႆႈၸႂ်";
 /** @export */ Blockly.Msg.CANNOT_DELETE_VARIABLE_PROCEDURE = "Can't delete the variable '%1' because it's part of the definition of the function '%2'";  // untranslated
 /** @export */ Blockly.Msg.CHANGE_VALUE_TITLE = "လႅၵ်ႈလၢႆႈၼမ်ႉၵတ်ႉ";
 /** @export */ Blockly.Msg.CLEAN_UP = "Clean up Blocks";  // untranslated
-/** @export */ Blockly.Msg.COLLAPSE_ALL = "ပလွၵ်ႉတင်းၼမ် လႅဝ်";
-/** @export */ Blockly.Msg.COLLAPSE_BLOCK = "ပလွၵ်ႉလႅဝ်";
+/** @export */ Blockly.Msg.COLLAPSE_ALL = "လွင်ႈႁႄႉတတ်းၸိူဝ်းလႅဝ်";
+/** @export */ Blockly.Msg.COLLAPSE_BLOCK = "လွင်ႈႁႄႉတတ်းလႅဝ်";
 /** @export */ Blockly.Msg.COLOUR_BLEND_COLOUR1 = "သီ 1";
 /** @export */ Blockly.Msg.COLOUR_BLEND_COLOUR2 = "သီ 2";
 /** @export */ Blockly.Msg.COLOUR_BLEND_HELPURL = "http://meyerweb.com/eric/tools/color-blend/";  // untranslated
@@ -65,12 +65,12 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_BLOCK = "မွတ်ႇပလွၵ်ႉ";
 /** @export */ Blockly.Msg.DELETE_VARIABLE = "Delete the '%1' variable";  // untranslated
 /** @export */ Blockly.Msg.DELETE_VARIABLE_CONFIRMATION = "Delete %1 uses of the '%2' variable?";  // untranslated
-/** @export */ Blockly.Msg.DELETE_X_BLOCKS = "မွတ်ႇပလွၵ်ႉ %1";
-/** @export */ Blockly.Msg.DISABLE_BLOCK = "ဢမ်ႇၸၢင်ႈပလွၵ်ႉ";
+/** @export */ Blockly.Msg.DELETE_X_BLOCKS = "မွတ်ႇလွင်ႈႁႄႉတတ်း %1";
+/** @export */ Blockly.Msg.DISABLE_BLOCK = "ဢိုတ်းၸႂ်ႉ လွင်ႈႁႄႉတတ်း";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ထုတ်ႇ";
-/** @export */ Blockly.Msg.ENABLE_BLOCK = "ၵမ်ႉထႅမ်ပၼ် ပလွၵ်ႉ";
-/** @export */ Blockly.Msg.EXPAND_ALL = "ၶႂၢၵ်ႈပလွၵ်ႉတင်းၼမ်";
-/** @export */ Blockly.Msg.EXPAND_BLOCK = "ၶႂၢၵ်ႈပလွၵ်ႉ";
+/** @export */ Blockly.Msg.ENABLE_BLOCK = "ပိုတ်ႇၸႂ်ႉ လွင်ႈႁႄႉတတ်း";
+/** @export */ Blockly.Msg.EXPAND_ALL = "ၶႂၢၵ်ႈၸိူဝ်းႁႄႉတတ်း";
+/** @export */ Blockly.Msg.EXPAND_BLOCK = "ၶႂၢၵ်ႈလွင်ႈႁႄႉတတ်း";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "ၶိူင်ႈဢၼ်လုၵ်ႉတၢင်းၼွၵ်ႈၶဝ်ႈမႃး";
 /** @export */ Blockly.Msg.HELP = "ၸွႆႈထႅမ်";
 /** @export */ Blockly.Msg.INLINE_INPUTS = "ၶိူင်ႈဢၼ်ၶဝ်ႈမႃးၸွမ်းလႅင်း";
@@ -311,9 +311,12 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_MUTATORCONTAINER_TITLE = "inputs";  // untranslated
 /** @export */ Blockly.Msg.PROCEDURES_MUTATORCONTAINER_TOOLTIP = "Add, remove, or reorder inputs to this function.";  // untranslated
 /** @export */ Blockly.Msg.REDO = "Redo";  // untranslated
-/** @export */ Blockly.Msg.REMOVE_COMMENT = "ဢဝ်ဢွၵ်ႇ ၶေႃႈၵႂၢမ်း";
+/** @export */ Blockly.Msg.REMOVE_COMMENT = "ထွၼ်ပႅတ်ႈ ၶေႃႈၶႆႈၸႂ်";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "လိုမ်ႉၶိုၼ်း ဢၼ်လၢႆႈမႂ်ႇ";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "လိုမ်ႉၶိုၼ်း ဢၼ်လၢႆႈမႂ်ႇၸိူဝ်းၼၼ်ႉ '%1' ထိုင်";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "to %1 append text %2";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Append some text to variable '%1'.";  // untranslated

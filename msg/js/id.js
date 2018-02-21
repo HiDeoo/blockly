@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Hapus Komentar";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Ubah nama variabel...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Ubah nama semua variabel '%1' menjadi:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "untuk %1 tambahkan teks %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Tambahkan beberapa teks ke variabel '%1'.";

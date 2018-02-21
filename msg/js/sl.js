@@ -54,7 +54,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.CONTROLS_IF_TOOLTIP_4 = "Če je prva vrednost resnična, izvedi prvo skupino kock. Sicer, če je resnična druga vrednost, izvedi drugo skupino kock. Če nobena izmed vrednosti ni resnična, izvedi zadnjo skupino kock.";
 /** @export */ Blockly.Msg.CONTROLS_REPEAT_HELPURL = "https://en.wikipedia.org/wiki/For_loop";
 /** @export */ Blockly.Msg.CONTROLS_REPEAT_INPUT_DO = "izvedi";
-/** @export */ Blockly.Msg.CONTROLS_REPEAT_TITLE = "ponavljaj %1 krat";
+/** @export */ Blockly.Msg.CONTROLS_REPEAT_TITLE = "ponovi %1 krat";
 /** @export */ Blockly.Msg.CONTROLS_REPEAT_TOOLTIP = "Kocke se izvedejo večkrat.";
 /** @export */ Blockly.Msg.CONTROLS_WHILEUNTIL_HELPURL = "https://github.com/google/blockly/wiki/Loops#repeat";
 /** @export */ Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL = "ponavljaj dokler";
@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Odstrani komentar";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Preimenuj spremenljivko...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Preimenuj vse spremenljivke '%1' v:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "k %1 dodaj besedilo %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Doda besedilo k spremenljivki '%1'.";

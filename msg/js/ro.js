@@ -314,6 +314,9 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.REMOVE_COMMENT = "Elimină comentariu";
 /** @export */ Blockly.Msg.RENAME_VARIABLE = "Redenumirea variabilei...";
 /** @export */ Blockly.Msg.RENAME_VARIABLE_TITLE = "Redenumeşte toate variabilele '%1' în:";
+/** @export */ Blockly.Msg.SEARCHING_BUTTON = "Searching for ";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_BUTTON = "Search…";  // untranslated
+/** @export */ Blockly.Msg.SEARCH_PROMPT = "Enter search filters.";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
 /** @export */ Blockly.Msg.TEXT_APPEND_TITLE = "la %1 Adăugaţi text %2";
 /** @export */ Blockly.Msg.TEXT_APPEND_TOOLTIP = "Adăugaţi text la variabila '%1'.";
