@@ -15,3 +15,21 @@ Blockly](https://developers.google.com/blockly/registration). The questionnaire 
 a few minutes and will help us better support the Blockly community.
 
 Want to contribute? Great! First, read [our guidelines for contributors](https://developers.google.com/blockly/guides/modify/contributing).
+
+## About this fork
+
+This fork adds a search feature in Blockly for all blocks, procedures & variables (available in the *search* branch).
+
+![Search in Blockly](https://i.imgur.com/gIDcZT5.gif)
+
+## How to use
+
+Just add the search category in your blocks definition:
+
+```xml
+<category name="Search" custom="SEARCH"></category>
+```
+
+## How to test
+
+Just open `tests/playground.html` in your browser.
