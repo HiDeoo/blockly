@@ -1206,3 +1206,8 @@ Blockly.Msg.PROCEDURES_IFRETURN_WARNING = 'Warning: This block may be used only 
 /// comment text - This text appears in a new workspace comment, to hint that
 /// the user can type here.
 Blockly.Msg.WORKSPACE_COMMENT_DEFAULT_TEXT = 'Say something...';
+
+// search - This text appears when a search has no result.
+Blockly.Msg.SEARCH_NO_RESULT = 'No results for ';
+// search - This text appears when a search has no filter.
+Blockly.Msg.SEARCH_NO_FILTER = 'Type your search.';

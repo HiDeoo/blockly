@@ -31,6 +31,7 @@ goog.provide('Blockly.WorkspaceSvg');
 goog.require('Blockly.ConnectionDB');
 goog.require('Blockly.constants');
 goog.require('Blockly.Events.BlockCreate');
+goog.require('Blockly.Search');
 goog.require('Blockly.Gesture');
 goog.require('Blockly.Grid');
 goog.require('Blockly.Options');
@@ -119,6 +120,10 @@ Blockly.WorkspaceSvg = function(options,
   if (Blockly.Procedures && Blockly.Procedures.flyoutCategory) {
     this.registerToolboxCategoryCallback(Blockly.PROCEDURE_CATEGORY_NAME,
         Blockly.Procedures.flyoutCategory);
+  }
+  if (Blockly.Search && Blockly.Search.flyoutCategory) {
+    this.registerToolboxCategoryCallback(Blockly.SEARCH_CATEGORY_NAME,
+        Blockly.Search.flyoutCategory);
   }
 };
 goog.inherits(Blockly.WorkspaceSvg, Blockly.Workspace);
@@ -566,6 +571,8 @@ Blockly.WorkspaceSvg.prototype.dispose = function() {
     Blockly.unbindEvent_(this.resizeHandlerWrapper_);
     this.resizeHandlerWrapper_ = null;
   }
+
+  Blockly.Search.dispose();
 };
 
 /**
@@ -2113,6 +2120,29 @@ Blockly.WorkspaceSvg.prototype.getAudioManager = function() {
  */
 Blockly.WorkspaceSvg.prototype.getGrid = function() {
   return this.grid_;
+};
+
+/**
+ * Search this workspace for blocks matching a query.
+ * @param {!string} query The query to search.
+ * @package
+ */
+Blockly.WorkspaceSvg.prototype.search = function(query) {
+  Blockly.Search.setFilters(query);
+
+  this.refreshToolboxSelection();
+
+  if (query.length === 0) {
+    var selectedCategory = this.toolbox_.tree_.getSelectedItem();
+
+    if (selectedCategory &&
+      selectedCategory.blocks === Blockly.SEARCH_CATEGORY_NAME) {
+      this.toolbox_.tree_.setSelectedItem(null);
+    }
+  } else {
+    var searchCategory = this.toolbox_.tree_.getFirstChild();
+    this.toolbox_.tree_.setSelectedItem(searchCategory);
+  }
 };
 
 // Export symbols that would otherwise be renamed by Closure compiler.

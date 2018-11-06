@@ -1735,3 +1735,63 @@ Blockly.Block.prototype.toDevString = function() {
   }
   return msg;
 };
+
+/**
+ * Search the block for specific queries.
+ * @param {!Array.<string>} queries Array of queries to search for.
+ * @return {boolean} True if the search matches the block.
+ */
+Blockly.Block.prototype.search = function(queries) {
+  if (!this.fields_) {
+    this.fields_ = this.getFields_();
+  }
+
+  var found = false;
+
+  for (var i = 0, filter; filter = queries[i]; i++) {
+    found = this.fields_.includes(filter.toLowerCase());
+
+    if (!found) {
+      break;
+    }
+  }
+
+  return found;
+};
+
+/**
+ * Return the stringified version of the searchable fields.
+ * @return {string} The stringified fields.
+ * @private
+ */
+Blockly.Block.prototype.getFields_ = function() {
+  var fields = [this.type, this.getTooltip()];
+
+  for (var i = 0, input; input = this.inputList[i]; i++) {
+    if (typeof input.name != 'undefined' && input.name.length > 0) {
+      fields.push(input.name);
+    }
+
+    for (var j = 0, field; field = input.fieldRow[j]; j++) {
+      fields.push(field.getText(), field.getValue());
+
+      if (typeof field.name != 'undefined' && field.name.length > 0) {
+        fields.push(field.name);
+      }
+    }
+  }
+
+  return fields.join(' ').toLowerCase();
+};
+
+/**
+ * Return the tooltip of the block.
+ * @return {string} The tooltip.
+ */
+Blockly.Block.prototype.getTooltip = function() {
+  if (!(this.tooltip instanceof Function)) {
+    return this.tooltip;
+  }
+
+  return this.tooltip();
+};

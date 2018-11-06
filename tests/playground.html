@@ -176,6 +176,11 @@ function toCode(lang) {
   taChange();
 }
 
+function search(e) {
+  var input = document.getElementById('searchInput');
+  workspace.search(input.value);
+}
+
 // Disable the "Import from XML" button if the XML is invalid.
 // Preserve text between page reloads.
 function taChange() {
@@ -356,6 +361,10 @@ h1 {
     Log events: &nbsp;
     <input type="checkbox" onclick="logEvents(this.checked)" id="logCheck">
   </p>
+  <p>
+    Search: &nbsp;
+    <input type="text" onkeyup="search();" id="searchInput">
+  </p>
 
   <!-- The next three blocks of XML are sample toolboxes for testing basic
   configurations.  For more information on building toolboxes, see https://developers.google.com/blockly/guides/configure/web/toolbox -->
@@ -392,6 +401,7 @@ h1 {
   Variables category uses untyped variable blocks.
   See https://developers.google.com/blockly/guides/create-custom-blocks/variables#untyped_variable_blocks for more information. -->
   <xml id="toolbox-categories" style="display: none">
+    <category name="Search" custom="SEARCH"></category>
     <category name="Logic" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>
       <block type="logic_compare"></block>
