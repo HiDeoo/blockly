@@ -84,6 +84,7 @@ goog.addDependency("../../../" + dir + "/core/options.js", ['Blockly.Options'], 
 goog.addDependency("../../../" + dir + "/core/procedures.js", ['Blockly.Procedures'], ['Blockly.Blocks', 'Blockly.constants', 'Blockly.Events.BlockChange', 'Blockly.Field', 'Blockly.Names', 'Blockly.Workspace', 'Blockly.Xml', 'Blockly.Xml.utils']);
 goog.addDependency("../../../" + dir + "/core/rendered_connection.js", ['Blockly.RenderedConnection'], ['Blockly.Connection', 'Blockly.utils', 'goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/scrollbar.js", ['Blockly.Scrollbar', 'Blockly.ScrollbarPair'], ['Blockly.utils', 'goog.events.BrowserFeature', 'goog.math.Coordinate']);
+goog.addDependency("../../../" + dir + "/core/search.js", ['Blockly.Search'], []);
 goog.addDependency("../../../" + dir + "/core/toolbox.js", ['Blockly.Toolbox'], ['Blockly.Events.Ui', 'Blockly.Flyout', 'Blockly.HorizontalFlyout', 'Blockly.Touch', 'Blockly.utils', 'Blockly.VerticalFlyout', 'goog.events', 'goog.events.BrowserFeature', 'goog.html.SafeHtml', 'goog.html.SafeStyle', 'goog.math.Rect', 'goog.style', 'goog.ui.tree.TreeControl', 'goog.ui.tree.TreeNode']);
 goog.addDependency("../../../" + dir + "/core/tooltip.js", ['Blockly.Tooltip'], ['Blockly.utils', 'goog.dom']);
 goog.addDependency("../../../" + dir + "/core/touch.js", ['Blockly.Touch'], ['Blockly.utils', 'goog.events.BrowserFeature']);
@@ -106,7 +107,7 @@ goog.addDependency("../../../" + dir + "/core/workspace_comment_render_svg.js", 
 goog.addDependency("../../../" + dir + "/core/workspace_comment_svg.js", ['Blockly.WorkspaceCommentSvg'], ['Blockly.Events.CommentCreate', 'Blockly.Events.CommentDelete', 'Blockly.Events.CommentMove', 'Blockly.utils', 'Blockly.WorkspaceComment', 'goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/workspace_drag_surface_svg.js", ['Blockly.WorkspaceDragSurfaceSvg'], ['Blockly.utils']);
 goog.addDependency("../../../" + dir + "/core/workspace_dragger.js", ['Blockly.WorkspaceDragger'], ['goog.math.Coordinate']);
-goog.addDependency("../../../" + dir + "/core/workspace_svg.js", ['Blockly.WorkspaceSvg'], ['Blockly.ConnectionDB', 'Blockly.constants', 'Blockly.Events.BlockCreate', 'Blockly.Gesture', 'Blockly.Grid', 'Blockly.Options', 'Blockly.ScrollbarPair', 'Blockly.Touch', 'Blockly.TouchGesture', 'Blockly.Trashcan', 'Blockly.utils', 'Blockly.VariablesDynamic', 'Blockly.Workspace', 'Blockly.WorkspaceAudio', 'Blockly.WorkspaceComment', 'Blockly.WorkspaceCommentSvg', 'Blockly.WorkspaceCommentSvg.render', 'Blockly.WorkspaceDragSurfaceSvg', 'Blockly.Xml', 'Blockly.ZoomControls', 'goog.dom', 'goog.math.Coordinate']);
+goog.addDependency("../../../" + dir + "/core/workspace_svg.js", ['Blockly.WorkspaceSvg'], ['Blockly.ConnectionDB', 'Blockly.constants', 'Blockly.Events.BlockCreate', 'Blockly.Search', 'Blockly.Gesture', 'Blockly.Grid', 'Blockly.Options', 'Blockly.ScrollbarPair', 'Blockly.Touch', 'Blockly.TouchGesture', 'Blockly.Trashcan', 'Blockly.utils', 'Blockly.VariablesDynamic', 'Blockly.Workspace', 'Blockly.WorkspaceAudio', 'Blockly.WorkspaceComment', 'Blockly.WorkspaceCommentSvg', 'Blockly.WorkspaceCommentSvg.render', 'Blockly.WorkspaceDragSurfaceSvg', 'Blockly.Xml', 'Blockly.ZoomControls', 'goog.dom', 'goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/ws_comment_events.js", ['Blockly.Events.CommentBase', 'Blockly.Events.CommentChange', 'Blockly.Events.CommentCreate', 'Blockly.Events.CommentDelete', 'Blockly.Events.CommentMove'], ['Blockly.Events', 'Blockly.Events.Abstract', 'Blockly.Xml', 'Blockly.Xml.utils', 'goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/xml.js", ['Blockly.Xml'], ['Blockly.Events.BlockCreate', 'Blockly.Events.VarCreate', 'Blockly.Xml.utils']);
 goog.addDependency("../../../" + dir + "/core/xml_utils.js", ['Blockly.Xml.utils'], []);
@@ -1794,6 +1795,7 @@ goog.require('Blockly.Procedures');
 goog.require('Blockly.RenderedConnection');
 goog.require('Blockly.Scrollbar');
 goog.require('Blockly.ScrollbarPair');
+goog.require('Blockly.Search');
 goog.require('Blockly.Toolbox');
 goog.require('Blockly.Tooltip');
 goog.require('Blockly.Touch');
