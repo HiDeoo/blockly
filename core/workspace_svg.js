@@ -31,6 +31,7 @@ goog.provide('Blockly.WorkspaceSvg');
 goog.require('Blockly.ConnectionDB');
 goog.require('Blockly.constants');
 goog.require('Blockly.Events.BlockCreate');
+goog.require('Blockly.Search');
 goog.require('Blockly.Gesture');
 goog.require('Blockly.Grid');
 goog.require('Blockly.Options');
@@ -64,7 +65,8 @@ goog.require('goog.math.Coordinate');
  * @extends {Blockly.Workspace}
  * @constructor
  */
-Blockly.WorkspaceSvg = function(options, opt_blockDragSurface, opt_wsDragSurface) {
+Blockly.WorkspaceSvg = function(options,
+    opt_blockDragSurface, opt_wsDragSurface) {
   Blockly.WorkspaceSvg.superClass_.constructor.call(this, options);
   this.getMetrics =
       options.getMetrics || Blockly.WorkspaceSvg.getTopLevelWorkspaceMetrics_;
@@ -118,6 +120,10 @@ Blockly.WorkspaceSvg = function(options, opt_blockDragSurface, opt_wsDragSurface
   if (Blockly.Procedures && Blockly.Procedures.flyoutCategory) {
     this.registerToolboxCategoryCallback(Blockly.PROCEDURE_CATEGORY_NAME,
         Blockly.Procedures.flyoutCategory);
+  }
+  if (Blockly.Search && Blockly.Search.flyoutCategory) {
+    this.registerToolboxCategoryCallback(Blockly.SEARCH_CATEGORY_NAME,
+        Blockly.Search.flyoutCategory);
   }
 };
 goog.inherits(Blockly.WorkspaceSvg, Blockly.Workspace);
@@ -311,7 +317,7 @@ Blockly.WorkspaceSvg.prototype.inverseScreenCTM_ = null;
 
 /**
  * Inverted screen CTM is dirty, recalculate it.
- * @type {Boolean}
+ * @type {boolean}
  * @private
  */
 Blockly.WorkspaceSvg.prototype.inverseScreenCTMDirty_ = true;
@@ -344,8 +350,8 @@ Blockly.WorkspaceSvg.prototype.updateInverseScreenCTM = function() {
 
 /**
  * Getter for isVisible
- * @return {boolean} Whether the workspace is visible.  False if the workspace has been hidden
- * by calling `setVisible(false)`.
+ * @return {boolean} Whether the workspace is visible.
+ *     False if the workspace has been hidden by calling `setVisible(false)`.
  */
 Blockly.WorkspaceSvg.prototype.isVisible = function() {
   return this.isVisible_;
@@ -565,6 +571,8 @@ Blockly.WorkspaceSvg.prototype.dispose = function() {
     Blockly.unbindEvent_(this.resizeHandlerWrapper_);
     this.resizeHandlerWrapper_ = null;
   }
+
+  Blockly.Search.dispose();
 };
 
 /**
@@ -907,7 +915,7 @@ Blockly.WorkspaceSvg.prototype.setVisible = function(isVisible) {
  */
 Blockly.WorkspaceSvg.prototype.render = function() {
   // Generate list of all blocks.
-  var blocks = this.getAllBlocks();
+  var blocks = this.getAllBlocks(false);
   // Render each block.
   for (var i = blocks.length - 1; i >= 0; i--) {
     blocks[i].render(false);
@@ -993,7 +1001,7 @@ Blockly.WorkspaceSvg.prototype.pasteBlock_ = function(xmlBlock) {
       // distance with neighbouring blocks.
       do {
         var collide = false;
-        var allBlocks = this.getAllBlocks();
+        var allBlocks = this.getAllBlocks(false);
         for (var i = 0, otherBlock; otherBlock = allBlocks[i]; i++) {
           var otherXY = otherBlock.getRelativeToSurfaceXY();
           if (Math.abs(blockX - otherXY.x) <= 1 &&
@@ -1051,7 +1059,8 @@ Blockly.WorkspaceSvg.prototype.pasteWorkspaceComment_ = function(xmlComment) {
         commentX = -commentX;
       }
       // Offset workspace comment.
-      // TODO: #1719 properly offset comment such that it's not interfereing with any blocks
+      // TODO (#1719): Properly offset comment such that it's not interfering
+      // with any blocks.
       commentX += 50;
       commentY += 50;
       comment.moveBy(commentX, commentY);
@@ -1060,7 +1069,7 @@ Blockly.WorkspaceSvg.prototype.pasteWorkspaceComment_ = function(xmlComment) {
     Blockly.Events.enable();
   }
   if (Blockly.Events.isEnabled()) {
-    // TODO: Fire a Workspace Comment Create event
+    // TODO: Fire a Workspace Comment Create event.
   }
   comment.select();
 };
@@ -1100,8 +1109,8 @@ Blockly.WorkspaceSvg.prototype.deleteVariableById = function(id) {
 };
 
 /**
- * Create a new variable with the given name.  Update the flyout to show the new
- *     variable immediately.
+ * Create a new variable with the given name.  Update the flyout to show the
+ *     new variable immediately.
  * @param {string} name The new variable's name.
  * @param {string=} opt_type The type of the variable like 'int' or 'string'.
  *     Does not need to be unique. Field_variable can filter variables based on
@@ -1602,10 +1611,10 @@ Blockly.WorkspaceSvg.prototype.zoomToFit = function() {
  */
 Blockly.WorkspaceSvg.prototype.beginCanvasTransition = function() {
   Blockly.utils.addClass(
-      /** @type {!SVGElement} */ this.svgBlockCanvas_,
+      /** @type {!SVGElement} */ (this.svgBlockCanvas_),
       'blocklyCanvasTransitioning');
   Blockly.utils.addClass(
-      /** @type {!SVGElement} */ this.svgBubbleCanvas_,
+      /** @type {!SVGElement} */ (this.svgBubbleCanvas_),
       'blocklyCanvasTransitioning');
 };
 
@@ -1615,10 +1624,10 @@ Blockly.WorkspaceSvg.prototype.beginCanvasTransition = function() {
  */
 Blockly.WorkspaceSvg.prototype.endCanvasTransition = function() {
   Blockly.utils.removeClass(
-      /** @type {!SVGElement} */ this.svgBlockCanvas_,
+      /** @type {!SVGElement} */ (this.svgBlockCanvas_),
       'blocklyCanvasTransitioning');
   Blockly.utils.removeClass(
-      /** @type {!SVGElement} */ this.svgBubbleCanvas_,
+      /** @type {!SVGElement} */ (this.svgBubbleCanvas_),
       'blocklyCanvasTransitioning');
 };
 /**
@@ -2111,6 +2120,29 @@ Blockly.WorkspaceSvg.prototype.getAudioManager = function() {
  */
 Blockly.WorkspaceSvg.prototype.getGrid = function() {
   return this.grid_;
+};
+
+/**
+ * Search this workspace for blocks matching a query.
+ * @param {!string} query The query to search.
+ * @package
+ */
+Blockly.WorkspaceSvg.prototype.search = function(query) {
+  Blockly.Search.setFilters(query);
+
+  this.refreshToolboxSelection();
+
+  if (query.length === 0) {
+    var selectedCategory = this.toolbox_.tree_.getSelectedItem();
+
+    if (selectedCategory &&
+      selectedCategory.blocks === Blockly.SEARCH_CATEGORY_NAME) {
+      this.toolbox_.tree_.setSelectedItem(null);
+    }
+  } else {
+    var searchCategory = this.toolbox_.tree_.getFirstChild();
+    this.toolbox_.tree_.setSelectedItem(searchCategory);
+  }
 };
 
 // Export symbols that would otherwise be renamed by Closure compiler.

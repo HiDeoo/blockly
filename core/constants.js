@@ -272,3 +272,11 @@ Blockly.RENAME_VARIABLE_ID = 'RENAME_VARIABLE_ID';
  * @const {string}
  */
 Blockly.DELETE_VARIABLE_ID = 'DELETE_VARIABLE_ID';
+
+/**
+ * String for use in the "custom" attribute of a category in toolbox xml.
+ * This string indicates that the category should be dynamically populated with
+ * search result blocks.
+ * @const {string}
+ */
+Blockly.SEARCH_CATEGORY_NAME = 'SEARCH';
