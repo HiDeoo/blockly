@@ -88,7 +88,7 @@ Blockly.Search.flyoutCategory = function(workspace) {
 Blockly.Search.dispose = function() {
   Blockly.Search.FILTERS = null;
 
-  if (!Blockly.Search.BLOCKS) {
+  if (Blockly.Search.BLOCKS) {
     for (var i = 0; i < Blockly.Search.BLOCKS.length; i++) {
       Blockly.Search.BLOCKS[i].dispose(false);
     }
