@@ -144,7 +144,27 @@ Blockly.Search.getBlocks_ = function(tree, workspace, headlessWorkspace) {
           continue;
         }
 
-        blocks.push(Blockly.Xml.domToBlock(block, headlessWorkspace));
+        if (!Blockly.Search.isBlockSearchable(block)) {
+          continue;
+        } else {
+          var atRoot = false;
+          var parent = block.parentElement;
+          var hierarchyPreventSearch = false;
+
+          while (atRoot !== true && hierarchyPreventSearch !== true) {
+            if (parent.tagName.toUpperCase() === 'XML') {
+              atRoot = true;
+            } else if (!Blockly.Search.isBlockSearchable(parent)) {
+              hierarchyPreventSearch = true;
+            } else {
+              parent = parent.parentElement;
+            }
+          }
+        }
+
+        if (!hierarchyPreventSearch) {
+          blocks.push(Blockly.Xml.domToBlock(block, headlessWorkspace));
+        }
       }
     }
 
@@ -154,6 +174,23 @@ Blockly.Search.getBlocks_ = function(tree, workspace, headlessWorkspace) {
   }
 
   return blocks;
+};
+
+/**
+ * Returns if a block is searchable or not. To not be searchable, the search
+ * must have been prevented using the `searchable` attribute in the XML
+ * representation.
+ * @param  {Block} block The block.
+ * @return {boolean} `true` when searchable.
+ */
+Blockly.Search.isBlockSearchable = function(block) {
+  var blockSearchableAttribute = block.getAttribute('searchable');
+
+  if (blockSearchableAttribute === "false") {
+    return false;
+  }
+
+  return true;
 };
 
 /**
