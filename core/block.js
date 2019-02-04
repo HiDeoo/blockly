@@ -1765,9 +1765,27 @@ Blockly.Block.prototype.search = function(queries) {
  * @private
  */
 Blockly.Block.prototype.getFields_ = function() {
-  var fields = [this.type, this.getTooltip()];
+  var fields = Blockly.Block.getAllFields_(this);
 
-  for (var i = 0, input; input = this.inputList[i]; i++) {
+  return fields.join(' ').toLowerCase();
+};
+
+/**
+ * Return recursively the stringified version of the searchable fields of a
+ * block and its children.
+ * @param {Blockly.Block} block The block.
+ * @param {?Array} fields List of stringified fields.
+ * @return {Array} The stringified fields.
+ * @private
+ */
+Blockly.Block.getAllFields_ = function(block, fields) {
+  if (fields === undefined) {
+    fields = [];
+  }
+
+  fields.push(block.type, block.getTooltip());
+
+  for (var i = 0, input; input = block.inputList[i]; i++) {
     if (typeof input.name != 'undefined' && input.name.length > 0) {
       fields.push(input.name);
     }
@@ -1781,7 +1799,15 @@ Blockly.Block.prototype.getFields_ = function() {
     }
   }
 
-  return fields.join(' ').toLowerCase();
+  var children = block.getChildren();
+
+  if (children.length > 0) {
+    for (var i = 0, child; child = children[i]; i++) {
+      Blockly.Block.getAllFields_(child, fields);
+    }
+  }
+
+  return fields;
 };
 
 /**
