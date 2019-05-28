@@ -92,6 +92,8 @@ Blockly.Search.dispose = function() {
     for (var i = 0; i < Blockly.Search.BLOCKS.length; i++) {
       Blockly.Search.BLOCKS[i].dispose(false);
     }
+
+    Blockly.Search.BLOCKS = null;
   }
 };
 
