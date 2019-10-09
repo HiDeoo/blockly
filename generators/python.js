@@ -1,9 +1,6 @@
 /**
  * @license
- * Visual Blocks Language
- *
- * Copyright 2012 Google Inc.
- * https://developers.google.com/blockly/
+ * Copyright 2012 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +24,7 @@
 goog.provide('Blockly.Python');
 
 goog.require('Blockly.Generator');
+goog.require('Blockly.utils.string');
 
 
 /**
@@ -239,22 +237,37 @@ Blockly.Python.quote_ = function(string) {
 };
 
 /**
+ * Encode a string as a properly escaped multiline Python string, complete
+ * with quotes.
+ * @param {string} string Text to encode.
+ * @return {string} Python string.
+ * @private
+ */
+Blockly.Python.multiline_quote_ = function(string) {
+  // Can't use goog.string.quote since % must also be escaped.
+  string = string.replace(/'''/g, '\\\'\\\'\\\'');
+  return '\'\'\'' + string + '\'\'\'';
+};
+
+/**
  * Common tasks for generating Python from blocks.
  * Handles comments for the specified block and any connected value blocks.
  * Calls any statements following this block.
  * @param {!Blockly.Block} block The current block.
  * @param {string} code The Python code created for this block.
+ * @param {boolean=} opt_thisOnly True to generate code for only this statement.
  * @return {string} Python code with comments and subsequent blocks added.
  * @private
  */
-Blockly.Python.scrub_ = function(block, code) {
+Blockly.Python.scrub_ = function(block, code, opt_thisOnly) {
   var commentCode = '';
   // Only collect comments for blocks that aren't inline.
   if (!block.outputConnection || !block.outputConnection.targetConnection) {
     // Collect comment for this block.
     var comment = block.getCommentText();
-    comment = Blockly.utils.wrap(comment, Blockly.Python.COMMENT_WRAP - 3);
     if (comment) {
+      comment = Blockly.utils.string.wrap(comment,
+        Blockly.Python.COMMENT_WRAP - 3);
       if (block.getProcedureDef) {
         // Use a comment block for function comments.
         commentCode += '"""' + comment + '\n"""\n';
@@ -277,7 +290,7 @@ Blockly.Python.scrub_ = function(block, code) {
     }
   }
   var nextBlock = block.nextConnection && block.nextConnection.targetBlock();
-  var nextCode = Blockly.Python.blockToCode(nextBlock);
+  var nextCode = opt_thisOnly ? '' : Blockly.Python.blockToCode(nextBlock);
   return commentCode + code + nextCode;
 };
 

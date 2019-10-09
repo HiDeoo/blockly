@@ -2,19 +2,16 @@
 
 'use strict';
 
-goog.provide('Blockly.Msg.mnw');
-
-goog.require('Blockly.Msg');
-
 Blockly.Msg["ADD_COMMENT"] = "စုတ် လညာတ်";
 Blockly.Msg["CANNOT_DELETE_VARIABLE_PROCEDURE"] = "မပြံင်လှာဲ '%1' ဂှ် ဇိုတ်ပလီု ဟွံဂွံ၊ ဟိုတ်နူ ဍေဟ်ဂှ် ဆက်စပ်ဒၟံင် ကုဝှင်ရှေန် '%2'";
 Blockly.Msg["CHANGE_VALUE_TITLE"] = "သၠာဲ ဍာ်ဒကေဝ်";
 Blockly.Msg["CLEAN_UP"] = "ဖအး ဗလံက်";
+Blockly.Msg["COLLAPSED_WARNINGS_WARNING"] = "Collapsed blocks contain warnings.";  // untranslated
 Blockly.Msg["COLLAPSE_ALL"] = "ဖဍိုန်ဖ္ဍောတ် ဗလံက်ဂမၠိုင်";
 Blockly.Msg["COLLAPSE_BLOCK"] = "ဖဍိုန်ဖ္ဍောတ် ဗလံက်";
 Blockly.Msg["COLOUR_BLEND_COLOUR1"] = "အသာ် ၁";
 Blockly.Msg["COLOUR_BLEND_COLOUR2"] = "အသာ် ၂";
-Blockly.Msg["COLOUR_BLEND_HELPURL"] = "http://meyerweb.com/eric/tools/color-blend/";  // untranslated
+Blockly.Msg["COLOUR_BLEND_HELPURL"] = "https://meyerweb.com/eric/tools/color-blend/#:::rgbp";  // untranslated
 Blockly.Msg["COLOUR_BLEND_RATIO"] = "ဗၞတ်ဗ္ၜတ်";
 Blockly.Msg["COLOUR_BLEND_TITLE"] = "ပနှဴ";
 Blockly.Msg["COLOUR_BLEND_TOOLTIP"] = "ပနှဴ အသာ် ၜါ နကဵု ဗၞတ်ဗ္ၜတ် (0.0 - 1.0).";
@@ -25,7 +22,7 @@ Blockly.Msg["COLOUR_RANDOM_TITLE"] = "ဇျောမ်ကေတ် အသာ�
 Blockly.Msg["COLOUR_RANDOM_TOOLTIP"] = "ရုဲစှ်ကေတ် အသာ် မွဲ ပ္ဍဲ ဇဟောမ်";
 Blockly.Msg["COLOUR_RGB_BLUE"] = "သာ်ဍီု";
 Blockly.Msg["COLOUR_RGB_GREEN"] = "သာ်ၚေက်";
-Blockly.Msg["COLOUR_RGB_HELPURL"] = "http://www.december.com/html/spec/colorper.html";  // untranslated
+Blockly.Msg["COLOUR_RGB_HELPURL"] = "https://www.december.com/html/spec/colorpercompact.html";  // untranslated
 Blockly.Msg["COLOUR_RGB_RED"] = "ဗကေတ်";
 Blockly.Msg["COLOUR_RGB_TITLE"] = "နကဵု အသာ်";
 Blockly.Msg["COLOUR_RGB_TOOLTIP"] = "ခၞံကၠောန်ကေတ် အသာ်တၟေင် အကြာ ဗကေတ်၊ သာ်ၚေက်၊ သာ်ဍီု၊၊ ဍာ်ဒကေဝ် သီုဖအိုတ် သ္ဒးဒှ် အကြာ ၀ ကဵု ၁၀၀၊၊";
@@ -394,6 +391,7 @@ Blockly.Msg["TEXT_TRIM_OPERATOR_RIGHT"] = "trim spaces from right side of";  // 
 Blockly.Msg["TEXT_TRIM_TOOLTIP"] = "Return a copy of the text with spaces removed from one or both ends.";  // untranslated
 Blockly.Msg["TODAY"] = "တ္ၚဲဏအ်";
 Blockly.Msg["UNDO"] = "ဟွံပ";
+Blockly.Msg["UNNAMED_KEY"] = "unnamed";  // untranslated
 Blockly.Msg["VARIABLES_DEFAULT_NAME"] = "ဒကုတ်";
 Blockly.Msg["VARIABLES_GET_CREATE_SET"] = "Create 'set %1'";  // untranslated
 Blockly.Msg["VARIABLES_GET_HELPURL"] = "https://github.com/google/blockly/wiki/Variables#get";  // untranslated
@@ -405,26 +403,26 @@ Blockly.Msg["VARIABLES_SET_TOOLTIP"] = "Sets this variable to be equal to the in
 Blockly.Msg["VARIABLE_ALREADY_EXISTS"] = "ယၟုမပြံင်လှာဲ '%1' ဂှ် နွံဒၟံင်တုဲရ၊၊";
 Blockly.Msg["VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE"] = "ယၟုမပြံင်လှာဲ '%1' ဂှ် နွံဒၟံင်တုဲရ နကဵုဗီုပြင်တၞဟ် - '%2'.";
 Blockly.Msg["WORKSPACE_COMMENT_DEFAULT_TEXT"] = "Say something...";  // untranslated
-Blockly.Msg["MATH_CHANGE_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
-Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_TITLE"];
-Blockly.Msg["CONTROLS_IF_IF_TITLE_IF"] = Blockly.Msg["CONTROLS_IF_MSG_IF"];
-Blockly.Msg["CONTROLS_WHILEUNTIL_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["CONTROLS_IF_MSG_THEN"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["CONTROLS_IF_ELSE_TITLE_ELSE"] = Blockly.Msg["CONTROLS_IF_MSG_ELSE"];
-Blockly.Msg["PROCEDURES_DEFRETURN_PROCEDURE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_PROCEDURE"];
-Blockly.Msg["LISTS_GET_SUBLIST_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["LISTS_GET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["PROCEDURES_DEFRETURN_DO"] = Blockly.Msg["PROCEDURES_DEFNORETURN_DO"];
-Blockly.Msg["CONTROLS_IF_ELSEIF_TITLE_ELSEIF"] = Blockly.Msg["CONTROLS_IF_MSG_ELSEIF"];
-Blockly.Msg["LISTS_GET_INDEX_HELPURL"] = Blockly.Msg["LISTS_INDEX_OF_HELPURL"];
 Blockly.Msg["CONTROLS_FOREACH_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["LISTS_SET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
 Blockly.Msg["CONTROLS_FOR_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
+Blockly.Msg["CONTROLS_IF_ELSEIF_TITLE_ELSEIF"] = Blockly.Msg["CONTROLS_IF_MSG_ELSEIF"];
+Blockly.Msg["CONTROLS_IF_ELSE_TITLE_ELSE"] = Blockly.Msg["CONTROLS_IF_MSG_ELSE"];
+Blockly.Msg["CONTROLS_IF_IF_TITLE_IF"] = Blockly.Msg["CONTROLS_IF_MSG_IF"];
+Blockly.Msg["CONTROLS_IF_MSG_THEN"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
+Blockly.Msg["CONTROLS_WHILEUNTIL_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
 Blockly.Msg["LISTS_CREATE_WITH_ITEM_TITLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+Blockly.Msg["LISTS_GET_INDEX_HELPURL"] = Blockly.Msg["LISTS_INDEX_OF_HELPURL"];
+Blockly.Msg["LISTS_GET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_GET_SUBLIST_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_INDEX_OF_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_SET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["MATH_CHANGE_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+Blockly.Msg["PROCEDURES_DEFRETURN_COMMENT"] = Blockly.Msg["PROCEDURES_DEFNORETURN_COMMENT"];
+Blockly.Msg["PROCEDURES_DEFRETURN_DO"] = Blockly.Msg["PROCEDURES_DEFNORETURN_DO"];
+Blockly.Msg["PROCEDURES_DEFRETURN_PROCEDURE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_PROCEDURE"];
+Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_TITLE"];
 Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
-Blockly.Msg["LISTS_INDEX_OF_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["PROCEDURES_DEFRETURN_COMMENT"] = Blockly.Msg["PROCEDURES_DEFNORETURN_COMMENT"];
 
 Blockly.Msg["MATH_HUE"] = "230";
 Blockly.Msg["LOOPS_HUE"] = "120";

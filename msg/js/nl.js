@@ -2,14 +2,11 @@
 
 'use strict';
 
-goog.provide('Blockly.Msg.nl');
-
-goog.require('Blockly.Msg');
-
 Blockly.Msg["ADD_COMMENT"] = "Opmerking toevoegen";
 Blockly.Msg["CANNOT_DELETE_VARIABLE_PROCEDURE"] = "De variabele \"%1\" kan niet verwijderd worden omdat die onderdeel uitmaakt van de definitie van de functie \"%2\"";
 Blockly.Msg["CHANGE_VALUE_TITLE"] = "Waarde wijzigen:";
 Blockly.Msg["CLEAN_UP"] = "Blokken opschonen";
+Blockly.Msg["COLLAPSED_WARNINGS_WARNING"] = "Samengevouwen blokken bevatten waarschuwingen.";
 Blockly.Msg["COLLAPSE_ALL"] = "Blokken samenvouwen";
 Blockly.Msg["COLLAPSE_BLOCK"] = "Blok samenvouwen";
 Blockly.Msg["COLOUR_BLEND_COLOUR1"] = "kleur 1";
@@ -206,9 +203,9 @@ Blockly.Msg["MATH_ARITHMETIC_TOOLTIP_DIVIDE"] = "Geeft de gedeelde waarde van tw
 Blockly.Msg["MATH_ARITHMETIC_TOOLTIP_MINUS"] = "Geeft het verschil van de twee getallen.";
 Blockly.Msg["MATH_ARITHMETIC_TOOLTIP_MULTIPLY"] = "Geeft het product terug van de twee getallen.";
 Blockly.Msg["MATH_ARITHMETIC_TOOLTIP_POWER"] = "Geeft het eerste getal tot de macht van het tweede getal.";
-Blockly.Msg["MATH_ATAN2_HELPURL"] = "https://en.wikipedia.org/wiki/Atan2";  // untranslated
-Blockly.Msg["MATH_ATAN2_TITLE"] = "atan2 of X:%1 Y:%2";  // untranslated
-Blockly.Msg["MATH_ATAN2_TOOLTIP"] = "Return the arctangent of point (X, Y) in degrees from -180 to 180.";  // untranslated
+Blockly.Msg["MATH_ATAN2_HELPURL"] = "https://en.wikipedia.org/wiki/Atan2";
+Blockly.Msg["MATH_ATAN2_TITLE"] = "atan2 van X:%1 Y:%2";
+Blockly.Msg["MATH_ATAN2_TOOLTIP"] = "Geef de boogtangens van punt (X, Y) terug in graden tussen -180 naar 180.";
 Blockly.Msg["MATH_CHANGE_HELPURL"] = "https://en.wikipedia.org/wiki/Programming_idiom#Incrementing_a_counter";
 Blockly.Msg["MATH_CHANGE_TITLE"] = "%1 wijzigen met %2";
 Blockly.Msg["MATH_CHANGE_TOOLTIP"] = "Voegt een getal toe aan variabele \"%1\".";
@@ -394,6 +391,7 @@ Blockly.Msg["TEXT_TRIM_OPERATOR_RIGHT"] = "spaties van de rechterkant verwijdere
 Blockly.Msg["TEXT_TRIM_TOOLTIP"] = "Geeft een kopie van de tekst met verwijderde spaties van één of beide kanten.";
 Blockly.Msg["TODAY"] = "Vandaag";
 Blockly.Msg["UNDO"] = "Ongedaan maken";
+Blockly.Msg["UNNAMED_KEY"] = "zonder naam";
 Blockly.Msg["VARIABLES_DEFAULT_NAME"] = "item";
 Blockly.Msg["VARIABLES_GET_CREATE_SET"] = "Maak \"verander %1\"";
 Blockly.Msg["VARIABLES_GET_HELPURL"] = "https://github.com/google/blockly/wiki/Variables#get";
@@ -405,26 +403,26 @@ Blockly.Msg["VARIABLES_SET_TOOLTIP"] = "Verandert de waarde van de variabele naa
 Blockly.Msg["VARIABLE_ALREADY_EXISTS"] = "Er bestaat al een variabele met de naam \"%1\".";
 Blockly.Msg["VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE"] = "Een variabele met de naam '%1' bestaat al voor een ander soort variabele: '%2'.";
 Blockly.Msg["WORKSPACE_COMMENT_DEFAULT_TEXT"] = "Zeg iets...";
-Blockly.Msg["MATH_CHANGE_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
-Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_TITLE"];
-Blockly.Msg["CONTROLS_IF_IF_TITLE_IF"] = Blockly.Msg["CONTROLS_IF_MSG_IF"];
-Blockly.Msg["CONTROLS_WHILEUNTIL_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["CONTROLS_IF_MSG_THEN"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["CONTROLS_IF_ELSE_TITLE_ELSE"] = Blockly.Msg["CONTROLS_IF_MSG_ELSE"];
-Blockly.Msg["PROCEDURES_DEFRETURN_PROCEDURE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_PROCEDURE"];
-Blockly.Msg["LISTS_GET_SUBLIST_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["LISTS_GET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["PROCEDURES_DEFRETURN_DO"] = Blockly.Msg["PROCEDURES_DEFNORETURN_DO"];
-Blockly.Msg["CONTROLS_IF_ELSEIF_TITLE_ELSEIF"] = Blockly.Msg["CONTROLS_IF_MSG_ELSEIF"];
-Blockly.Msg["LISTS_GET_INDEX_HELPURL"] = Blockly.Msg["LISTS_INDEX_OF_HELPURL"];
 Blockly.Msg["CONTROLS_FOREACH_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["LISTS_SET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
 Blockly.Msg["CONTROLS_FOR_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
+Blockly.Msg["CONTROLS_IF_ELSEIF_TITLE_ELSEIF"] = Blockly.Msg["CONTROLS_IF_MSG_ELSEIF"];
+Blockly.Msg["CONTROLS_IF_ELSE_TITLE_ELSE"] = Blockly.Msg["CONTROLS_IF_MSG_ELSE"];
+Blockly.Msg["CONTROLS_IF_IF_TITLE_IF"] = Blockly.Msg["CONTROLS_IF_MSG_IF"];
+Blockly.Msg["CONTROLS_IF_MSG_THEN"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
+Blockly.Msg["CONTROLS_WHILEUNTIL_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
 Blockly.Msg["LISTS_CREATE_WITH_ITEM_TITLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+Blockly.Msg["LISTS_GET_INDEX_HELPURL"] = Blockly.Msg["LISTS_INDEX_OF_HELPURL"];
+Blockly.Msg["LISTS_GET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_GET_SUBLIST_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_INDEX_OF_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_SET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["MATH_CHANGE_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+Blockly.Msg["PROCEDURES_DEFRETURN_COMMENT"] = Blockly.Msg["PROCEDURES_DEFNORETURN_COMMENT"];
+Blockly.Msg["PROCEDURES_DEFRETURN_DO"] = Blockly.Msg["PROCEDURES_DEFNORETURN_DO"];
+Blockly.Msg["PROCEDURES_DEFRETURN_PROCEDURE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_PROCEDURE"];
+Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_TITLE"];
 Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
-Blockly.Msg["LISTS_INDEX_OF_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["PROCEDURES_DEFRETURN_COMMENT"] = Blockly.Msg["PROCEDURES_DEFNORETURN_COMMENT"];
 
 Blockly.Msg["MATH_HUE"] = "230";
 Blockly.Msg["LOOPS_HUE"] = "120";

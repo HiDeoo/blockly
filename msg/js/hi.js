@@ -2,19 +2,16 @@
 
 'use strict';
 
-goog.provide('Blockly.Msg.hi');
-
-goog.require('Blockly.Msg');
-
 Blockly.Msg["ADD_COMMENT"] = "टिप्पणी छोड़ें";
 Blockly.Msg["CANNOT_DELETE_VARIABLE_PROCEDURE"] = "चर '%1' को नहीं हटा सकता क्योंकि यह फ़ंक्शन '%2' की परिभाषा का हिस्सा है";
 Blockly.Msg["CHANGE_VALUE_TITLE"] = "मान परिवर्तित करें:";
 Blockly.Msg["CLEAN_UP"] = "खानों को साफ करें";
+Blockly.Msg["COLLAPSED_WARNINGS_WARNING"] = "Collapsed blocks contain warnings.";  // untranslated
 Blockly.Msg["COLLAPSE_ALL"] = "ब्लॉक संक्षिप्त करें";
 Blockly.Msg["COLLAPSE_BLOCK"] = "ब्लॉक को संक्षिप्त करें";
 Blockly.Msg["COLOUR_BLEND_COLOUR1"] = "रंग 1";
 Blockly.Msg["COLOUR_BLEND_COLOUR2"] = "रंग 2";
-Blockly.Msg["COLOUR_BLEND_HELPURL"] = "http://meyerweb.com/eric/tools/color-blend/";  // untranslated
+Blockly.Msg["COLOUR_BLEND_HELPURL"] = "https://meyerweb.com/eric/tools/color-blend/#:::rgbp";  // untranslated
 Blockly.Msg["COLOUR_BLEND_RATIO"] = "अनुपात";
 Blockly.Msg["COLOUR_BLEND_TITLE"] = "मिश्रण करें";
 Blockly.Msg["COLOUR_BLEND_TOOLTIP"] = "दिए गए अनुपात (0.0 - 1.0) के साथ दो रंगों का मिश्रण करता है।";
@@ -25,7 +22,7 @@ Blockly.Msg["COLOUR_RANDOM_TITLE"] = "कोई भी रंग";
 Blockly.Msg["COLOUR_RANDOM_TOOLTIP"] = "कोई भी एक रंग का चयन करें।";
 Blockly.Msg["COLOUR_RGB_BLUE"] = "नीला";
 Blockly.Msg["COLOUR_RGB_GREEN"] = "हरा";
-Blockly.Msg["COLOUR_RGB_HELPURL"] = "http://www.december.com/html/spec/colorper.html";  // untranslated
+Blockly.Msg["COLOUR_RGB_HELPURL"] = "https://www.december.com/html/spec/colorpercompact.html";  // untranslated
 Blockly.Msg["COLOUR_RGB_RED"] = "लाल";
 Blockly.Msg["COLOUR_RGB_TITLE"] = "इसके साथ रंग करें";
 Blockly.Msg["COLOUR_RGB_TOOLTIP"] = "लाल, हरा और नीले की निर्दिष्ट मात्रा के साथ एक रंग बनायें। सभी मान ० से १०० के बीच होने चाहिए।";
@@ -394,6 +391,7 @@ Blockly.Msg["TEXT_TRIM_OPERATOR_RIGHT"] = "रिक्त स्थान क�
 Blockly.Msg["TEXT_TRIM_TOOLTIP"] = "एक या दोनों सिरों से हटाए गए रिक्त स्थान के साथ पाठ की एक प्रति लौटाएं।";
 Blockly.Msg["TODAY"] = "आज";
 Blockly.Msg["UNDO"] = "पूर्ववत करें";
+Blockly.Msg["UNNAMED_KEY"] = "अज्ञात";
 Blockly.Msg["VARIABLES_DEFAULT_NAME"] = "वस्तु";
 Blockly.Msg["VARIABLES_GET_CREATE_SET"] = "सेट '%1' बनाएँ";
 Blockly.Msg["VARIABLES_GET_HELPURL"] = "https://github.com/google/blockly/wiki/Variables#get";  // untranslated
@@ -405,26 +403,26 @@ Blockly.Msg["VARIABLES_SET_TOOLTIP"] = "इस चर को इनपुट क
 Blockly.Msg["VARIABLE_ALREADY_EXISTS"] = "प्राचल नाम '%1' पहले से मौजूद है।";
 Blockly.Msg["VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE"] = "'%1' नाम का एक चर पहले से '%2' प्रकार के अन्य चर के लिए मौजूद है।";
 Blockly.Msg["WORKSPACE_COMMENT_DEFAULT_TEXT"] = "Say something...";  // untranslated
-Blockly.Msg["MATH_CHANGE_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
-Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_TITLE"];
-Blockly.Msg["CONTROLS_IF_IF_TITLE_IF"] = Blockly.Msg["CONTROLS_IF_MSG_IF"];
-Blockly.Msg["CONTROLS_WHILEUNTIL_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["CONTROLS_IF_MSG_THEN"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["CONTROLS_IF_ELSE_TITLE_ELSE"] = Blockly.Msg["CONTROLS_IF_MSG_ELSE"];
-Blockly.Msg["PROCEDURES_DEFRETURN_PROCEDURE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_PROCEDURE"];
-Blockly.Msg["LISTS_GET_SUBLIST_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["LISTS_GET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["PROCEDURES_DEFRETURN_DO"] = Blockly.Msg["PROCEDURES_DEFNORETURN_DO"];
-Blockly.Msg["CONTROLS_IF_ELSEIF_TITLE_ELSEIF"] = Blockly.Msg["CONTROLS_IF_MSG_ELSEIF"];
-Blockly.Msg["LISTS_GET_INDEX_HELPURL"] = Blockly.Msg["LISTS_INDEX_OF_HELPURL"];
 Blockly.Msg["CONTROLS_FOREACH_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["LISTS_SET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
 Blockly.Msg["CONTROLS_FOR_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
+Blockly.Msg["CONTROLS_IF_ELSEIF_TITLE_ELSEIF"] = Blockly.Msg["CONTROLS_IF_MSG_ELSEIF"];
+Blockly.Msg["CONTROLS_IF_ELSE_TITLE_ELSE"] = Blockly.Msg["CONTROLS_IF_MSG_ELSE"];
+Blockly.Msg["CONTROLS_IF_IF_TITLE_IF"] = Blockly.Msg["CONTROLS_IF_MSG_IF"];
+Blockly.Msg["CONTROLS_IF_MSG_THEN"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
+Blockly.Msg["CONTROLS_WHILEUNTIL_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
 Blockly.Msg["LISTS_CREATE_WITH_ITEM_TITLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+Blockly.Msg["LISTS_GET_INDEX_HELPURL"] = Blockly.Msg["LISTS_INDEX_OF_HELPURL"];
+Blockly.Msg["LISTS_GET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_GET_SUBLIST_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_INDEX_OF_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["LISTS_SET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
+Blockly.Msg["MATH_CHANGE_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+Blockly.Msg["PROCEDURES_DEFRETURN_COMMENT"] = Blockly.Msg["PROCEDURES_DEFNORETURN_COMMENT"];
+Blockly.Msg["PROCEDURES_DEFRETURN_DO"] = Blockly.Msg["PROCEDURES_DEFNORETURN_DO"];
+Blockly.Msg["PROCEDURES_DEFRETURN_PROCEDURE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_PROCEDURE"];
+Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_TITLE"];
 Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
-Blockly.Msg["LISTS_INDEX_OF_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["PROCEDURES_DEFRETURN_COMMENT"] = Blockly.Msg["PROCEDURES_DEFNORETURN_COMMENT"];
 
 Blockly.Msg["MATH_HUE"] = "230";
 Blockly.Msg["LOOPS_HUE"] = "120";

@@ -1,9 +1,6 @@
 /**
  * @license
- * Visual Blocks Language
- *
- * Copyright 2014 Google Inc.
- * https://developers.google.com/blockly/
+ * Copyright 2014 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +30,7 @@ Blockly.Dart.addReservedWords('Math');
 
 Blockly.Dart['math_number'] = function(block) {
   // Numeric value.
-  var code = parseFloat(block.getFieldValue('NUM'));
+  var code = Number(block.getFieldValue('NUM'));
   var order;
   if (code == Infinity) {
     code = 'double.infinity';
@@ -190,7 +187,7 @@ Blockly.Dart['math_number_property'] = function(block) {
   var number_to_check = Blockly.Dart.valueToCode(block, 'NUMBER_TO_CHECK',
       Blockly.Dart.ORDER_MULTIPLICATIVE);
   if (!number_to_check) {
-    return ['false', Blockly.Python.ORDER_ATOMIC];
+    return ['false', Blockly.Dart.ORDER_ATOMIC];
   }
   var dropdown_property = block.getFieldValue('PROPERTY');
   var code;
@@ -242,7 +239,7 @@ Blockly.Dart['math_number_property'] = function(block) {
       var divisor = Blockly.Dart.valueToCode(block, 'DIVISOR',
           Blockly.Dart.ORDER_MULTIPLICATIVE);
       if (!divisor) {
-        return ['false', Blockly.Python.ORDER_ATOMIC];
+        return ['false', Blockly.Dart.ORDER_ATOMIC];
       }
       code = number_to_check + ' % ' + divisor + ' == 0';
       break;
