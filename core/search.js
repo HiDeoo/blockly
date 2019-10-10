@@ -68,13 +68,13 @@ Blockly.Search.flyoutCategory = function(workspace) {
     }
 
     if (xmlList.length === 0) {
-      var label = goog.dom.createDom('label');
+      var label = document.createElementNS(Blockly.utils.dom.HTML_NS, 'label');
       label.setAttribute('text', Blockly.Msg.SEARCH_NO_RESULT +
         Blockly.Search.FILTERS.join(' ') + '.');
       xmlList.push(label);
     }
   } else {
-    var label = goog.dom.createDom('label');
+    var label = document.createElementNS(Blockly.utils.dom.HTML_NS, 'label');
     label.setAttribute('text', Blockly.Msg.SEARCH_NO_FILTER);
     xmlList.push(label);
   }
