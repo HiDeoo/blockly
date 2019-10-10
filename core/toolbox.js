@@ -667,7 +667,7 @@ Blockly.Toolbox.prototype.getClientRect = function() {
   var left = toolboxRect.left;
   var right = left + toolboxRect.width;
 
-  if (x === 0 && y === 0 && width === 0 && height === 0) {
+  if (left === 0 && top === 0 && toolboxRect.width === 0 && toolboxRect.height === 0) {
     return null;
   }
 
