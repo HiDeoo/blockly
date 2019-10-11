@@ -14,6 +14,7 @@
 		]
 	},
 	"VARIABLES_DEFAULT_NAME": "البند",
+	"UNNAMED_KEY": "غير مسمى",
 	"TODAY": "اليوم",
 	"DUPLICATE_BLOCK": "مكرر",
 	"ADD_COMMENT": "أضف تعليقًا",
@@ -92,7 +93,7 @@
 	"CONTROLS_IF_ELSEIF_TOOLTIP": "إضف شرطا إلى القطعة الشرطية \"إذا\".",
 	"CONTROLS_IF_ELSE_TOOLTIP": "أضف شرط \"نهاية، إجمع\" إلى القطعة الشرطية \"إذا\".",
 	"IOS_OK": "أوافق",
-	"IOS_CANCEL": "ألغِ",
+	"IOS_CANCEL": "إلغاء",
 	"IOS_ERROR": "خطأ",
 	"IOS_PROCEDURES_INPUTS": "المدخلات",
 	"IOS_PROCEDURES_ADD_INPUT": "+اضافة ادخال",
@@ -209,6 +210,9 @@
 	"MATH_RANDOM_FLOAT_HELPURL": "https://en.wikipedia.org/wiki/Random_number_generation",
 	"MATH_RANDOM_FLOAT_TITLE_RANDOM": "كسر عشوائي",
 	"MATH_RANDOM_FLOAT_TOOLTIP": "يرجع جزء عشوائي بين 0.0 (ضمنياً) و 1.0 (خارجيا).",
+	"MATH_ATAN2_HELPURL": "https://en.wikipedia.org/wiki/Atan2",
+	"MATH_ATAN2_TITLE": "atan2 من X:%1 Y:%2",
+	"MATH_ATAN2_TOOLTIP": "عودة قوس ظل النقطة (س، ص) بالدرجات من -180 إلى 180.",
 	"TEXT_TEXT_HELPURL": "https://en.wikipedia.org/wiki/String_(computer_science)",
 	"TEXT_TEXT_TOOLTIP": "حرف أو كلمة أو سطر من النص.",
 	"TEXT_JOIN_TITLE_CREATEWITH": "انشئ نص مع",
@@ -363,5 +367,6 @@
 	"PROCEDURES_CREATE_DO": "إنشئ '%1'",
 	"PROCEDURES_IFRETURN_TOOLTIP": "إذا كانت القيمة صحيحة ، اذان قم بارجاع القيمة الثانية.",
 	"PROCEDURES_IFRETURN_WARNING": "تحذير:هذه القطعة تستخدم فقط داخل تعريف دالة.",
-	"WORKSPACE_COMMENT_DEFAULT_TEXT": "قل شيئا..."
+	"WORKSPACE_COMMENT_DEFAULT_TEXT": "قل شيئا...",
+	"COLLAPSED_WARNINGS_WARNING": "الكتل المطوية تحتوي على تحذيرات."
 }

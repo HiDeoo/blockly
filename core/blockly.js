@@ -1,9 +1,6 @@
 /**
  * @license
- * Visual Blocks Editor
- *
- * Copyright 2011 Google Inc.
- * https://developers.google.com/blockly/
+ * Copyright 2011 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,39 +27,31 @@
  */
 goog.provide('Blockly');
 
-goog.require('Blockly.BlockSvg.render');
+goog.require('Blockly.constants');
 goog.require('Blockly.Events');
-goog.require('Blockly.FieldAngle');
-goog.require('Blockly.FieldCheckbox');
-goog.require('Blockly.FieldColour');
-// Date picker commented out since it increases footprint by 60%.
-// Add it only if you need it.
-//goog.require('Blockly.FieldDate');
-goog.require('Blockly.FieldDropdown');
-goog.require('Blockly.FieldImage');
-goog.require('Blockly.FieldTextInput');
-goog.require('Blockly.FieldNumber');
-goog.require('Blockly.FieldVariable');
-goog.require('Blockly.Generator');
-goog.require('Blockly.Msg');
+goog.require('Blockly.Events.Ui');
+goog.require('Blockly.inject');
+goog.require('Blockly.navigation');
 goog.require('Blockly.Procedures');
-goog.require('Blockly.Toolbox');
+goog.require('Blockly.Tooltip');
 goog.require('Blockly.Touch');
+goog.require('Blockly.utils');
+goog.require('Blockly.utils.colour');
+goog.require('Blockly.Variables');
 goog.require('Blockly.WidgetDiv');
 goog.require('Blockly.WorkspaceSvg');
-goog.require('Blockly.constants');
-goog.require('Blockly.inject');
-goog.require('Blockly.utils');
 goog.require('Blockly.Xml');
 
-goog.require('goog.color');
 
-
-// Turn off debugging when compiled.
-// Unused within the Blockly library, but used in Closure.
-/* eslint-disable no-unused-vars */
-var CLOSURE_DEFINES = {'goog.DEBUG': false};
-/* eslint-enable no-unused-vars */
+/**
+ * Blockly core version.
+ * This constant is overridden by the build script (build.py) to the value of the version
+ * in package.json. This is done during the gen_core build step.
+ * For local builds, you can pass --define='Blockly.VERSION=X.Y.Z' to the compiler
+ * to override this constant.
+ * @define {string}
+ */
+Blockly.VERSION = 'uncompiled';
 
 /**
  * The main workspace most recently used.
@@ -76,6 +65,18 @@ Blockly.mainWorkspace = null;
  * @type {Blockly.Block}
  */
 Blockly.selected = null;
+
+/**
+ * Current cursor.
+ * @type {Blockly.Cursor}
+ */
+Blockly.cursor = null;
+
+/**
+ * Whether or not we're currently in keyboard accessibility mode.
+ * @type {boolean}
+ */
+Blockly.keyboardAccessibilityMode = false;
 
 /**
  * All of the connections on blocks that are currently being dragged.
@@ -99,21 +100,18 @@ Blockly.clipboardXml_ = null;
 Blockly.clipboardSource_ = null;
 
 /**
+ * Map of types to type counts for the clipboard object and descendants.
+ * @type {Object}
+ * @private
+ */
+Blockly.clipboardTypeCounts_ = null;
+
+/**
  * Cached value for whether 3D is supported.
- * @type {!boolean}
+ * @type {?boolean}
  * @private
  */
 Blockly.cache3dSupported_ = null;
-
-/**
- * Convert a hue (HSV model) into an RGB hex triplet.
- * @param {number} hue Hue on a colour wheel (0-360).
- * @return {string} RGB code, e.g. '#5ba65b'.
- */
-Blockly.hueToRgb = function(hue) {
-  return goog.color.hsvToHex(hue, Blockly.HSV_SATURATION,
-      Blockly.HSV_VALUE * 255);
-};
 
 /**
  * Returns the dimensions of the specified SVG image.
@@ -177,27 +175,39 @@ Blockly.svgResize = function(workspace) {
 // TODO (https://github.com/google/blockly/issues/1998) handle cases where there
 // are multiple workspaces and non-main workspaces are able to accept input.
 Blockly.onKeyDown_ = function(e) {
-  var workspace = Blockly.mainWorkspace;
-  if (workspace.options.readOnly || Blockly.utils.isTargetInput(e)
-      || (workspace.rendered && !workspace.isVisible())) {
-    // No key actions on readonly workspaces.
+  var mainWorkspace = Blockly.mainWorkspace;
+
+  if (Blockly.utils.isTargetInput(e) ||
+      (mainWorkspace.rendered && !mainWorkspace.isVisible())) {
     // When focused on an HTML text input widget, don't trap any keys.
     // Ignore keypresses on rendered workspaces that have been explicitly
     // hidden.
     return;
   }
+
+  if (mainWorkspace.options.readOnly) {
+    // When in read only mode handle key actions for keyboard navigation.
+    Blockly.navigation.onKeyPress(e);
+    return;
+  }
+
   var deleteBlock = false;
-  if (e.keyCode == 27) {
+  if (e.keyCode == Blockly.utils.KeyCodes.ESC) {
     // Pressing esc closes the context menu.
     Blockly.hideChaff();
-  } else if (e.keyCode == 8 || e.keyCode == 46) {
+    Blockly.navigation.onBlocklyAction(Blockly.navigation.ACTION_EXIT);
+  } else if (Blockly.navigation.onKeyPress(e)) {
+    // If the keyboard or field handled the key press return.
+    return;
+  } else if (e.keyCode == Blockly.utils.KeyCodes.BACKSPACE ||
+      e.keyCode == Blockly.utils.KeyCodes.DELETE) {
     // Delete or backspace.
     // Stop the browser from going back to the previous page.
     // Do this first to prevent an error in the delete code from resulting in
     // data loss.
     e.preventDefault();
     // Don't delete while dragging.  Jeez.
-    if (workspace.isDragging()) {
+    if (Blockly.Gesture.inProgress()) {
       return;
     }
     if (Blockly.selected && Blockly.selected.isDeletable()) {
@@ -205,7 +215,7 @@ Blockly.onKeyDown_ = function(e) {
     }
   } else if (e.altKey || e.ctrlKey || e.metaKey) {
     // Don't use meta keys during drags.
-    if (workspace.isDragging()) {
+    if (Blockly.Gesture.inProgress()) {
       return;
     }
     if (Blockly.selected &&
@@ -213,34 +223,38 @@ Blockly.onKeyDown_ = function(e) {
       // Don't allow copying immovable or undeletable blocks. The next step
       // would be to paste, which would create additional undeletable/immovable
       // blocks on the workspace.
-      if (e.keyCode == 67) {
+      if (e.keyCode == Blockly.utils.KeyCodes.C) {
         // 'c' for copy.
         Blockly.hideChaff();
         Blockly.copy_(Blockly.selected);
-      } else if (e.keyCode == 88 && !Blockly.selected.workspace.isFlyout) {
+      } else if (e.keyCode == Blockly.utils.KeyCodes.X &&
+          !Blockly.selected.workspace.isFlyout) {
         // 'x' for cut, but not in a flyout.
         // Don't even copy the selected item in the flyout.
         Blockly.copy_(Blockly.selected);
         deleteBlock = true;
       }
     }
-    if (e.keyCode == 86) {
+    if (e.keyCode == Blockly.utils.KeyCodes.V) {
       // 'v' for paste.
       if (Blockly.clipboardXml_) {
-        Blockly.Events.setGroup(true);
         // Pasting always pastes to the main workspace, even if the copy
         // started in a flyout workspace.
         var workspace = Blockly.clipboardSource_;
         if (workspace.isFlyout) {
           workspace = workspace.targetWorkspace;
         }
-        workspace.paste(Blockly.clipboardXml_);
-        Blockly.Events.setGroup(false);
+        if (Blockly.clipboardTypeCounts_ &&
+            workspace.isCapacityAvailable(Blockly.clipboardTypeCounts_)) {
+          Blockly.Events.setGroup(true);
+          workspace.paste(Blockly.clipboardXml_);
+          Blockly.Events.setGroup(false);
+        }
       }
-    } else if (e.keyCode == 90) {
+    } else if (e.keyCode == Blockly.utils.KeyCodes.Z) {
       // 'z' for undo 'Z' is for redo.
       Blockly.hideChaff();
-      workspace.undo(e.shiftKey);
+      mainWorkspace.undo(e.shiftKey);
     }
   }
   // Common code for delete and cut.
@@ -263,7 +277,7 @@ Blockly.copy_ = function(toCopy) {
   if (toCopy.isComment) {
     var xml = toCopy.toXmlWithXY();
   } else {
-    var xml = Blockly.Xml.blockToDom(toCopy);
+    var xml = Blockly.Xml.blockToDom(toCopy, true);
     // Copy only the selected block and internal blocks.
     Blockly.Xml.deleteNext(xml);
     // Encode start position in XML.
@@ -273,6 +287,8 @@ Blockly.copy_ = function(toCopy) {
   }
   Blockly.clipboardXml_ = xml;
   Blockly.clipboardSource_ = toCopy.workspace;
+  Blockly.clipboardTypeCounts_ = toCopy.isComment ? null :
+      Blockly.utils.getBlockTypeCounts(toCopy, true);
 };
 
 /**
@@ -314,29 +330,21 @@ Blockly.onContextMenu_ = function(e) {
 Blockly.hideChaff = function(opt_allowToolbox) {
   Blockly.Tooltip.hide();
   Blockly.WidgetDiv.hide();
+  Blockly.DropDownDiv.hideWithoutAnimation();
   if (!opt_allowToolbox) {
     var workspace = Blockly.getMainWorkspace();
+    // For now the trashcan flyout always autocloses because it overlays the
+    // trashcan UI (no trashcan to click to close it).
+    if (workspace.trashcan &&
+      workspace.trashcan.flyout_) {
+      workspace.trashcan.flyout_.hide();
+    }
     if (workspace.toolbox_ &&
         workspace.toolbox_.flyout_ &&
         workspace.toolbox_.flyout_.autoClose) {
       workspace.toolbox_.clearSelection();
     }
   }
-};
-
-/**
- * When something in Blockly's workspace changes, call a function.
- * @param {!Function} func Function to call.
- * @return {!Array.<!Array>} Opaque data that can be passed to
- *     removeChangeListener.
- * @deprecated April 2015
- */
-Blockly.addChangeListener = function(func) {
-  // Backwards compatibility from before there could be multiple workspaces.
-  console.warn(
-      'Deprecated call to Blockly.addChangeListener, ' +
-      'use workspace.addChangeListener instead.');
-  return Blockly.getMainWorkspace().addChangeListener(func);
 };
 
 /**
@@ -356,7 +364,7 @@ Blockly.getMainWorkspace = function() {
  * @param {function()=} opt_callback The callback when the alert is dismissed.
  */
 Blockly.alert = function(message, opt_callback) {
-  window.alert(message);
+  alert(message);
   if (opt_callback) {
     opt_callback();
   }
@@ -369,7 +377,7 @@ Blockly.alert = function(message, opt_callback) {
  * @param {!function(boolean)} callback The callback for handling user response.
  */
 Blockly.confirm = function(message, callback) {
-  callback(window.confirm(message));
+  callback(confirm(message));
 };
 
 /**
@@ -382,7 +390,7 @@ Blockly.confirm = function(message, callback) {
  * @param {!function(string)} callback The callback for handling user response.
  */
 Blockly.prompt = function(message, defaultValue, callback) {
-  callback(window.prompt(message, defaultValue));
+  callback(prompt(message, defaultValue));
 };
 
 /**
@@ -441,7 +449,7 @@ Blockly.defineBlocksWithJsonArray = function(jsonArray) {
  * @param {!Function} func Function to call when event is triggered.
  * @param {boolean=} opt_noCaptureIdentifier True if triggering on this event
  *     should not block execution of other event handlers on this touch or
- *     other simultaneous touches.
+ *     other simultaneous touches.  False by default.
  * @param {boolean=} opt_noPreventDefault True if triggering on this event
  *     should prevent the default handler.  False by default.  If
  *     opt_noPreventDefault is provided, opt_noCaptureIdentifier must also be
@@ -471,7 +479,8 @@ Blockly.bindEventWithChecks_ = function(node, name, thisObject, func,
   };
 
   var bindData = [];
-  if (goog.global.PointerEvent && (name in Blockly.Touch.TOUCH_MAP)) {
+  if (Blockly.utils.global['PointerEvent'] &&
+      (name in Blockly.Touch.TOUCH_MAP)) {
     for (var i = 0, type; type = Blockly.Touch.TOUCH_MAP[name][i]; i++) {
       node.addEventListener(type, wrapFunc, false);
       bindData.push([node, type, wrapFunc]);
@@ -523,8 +532,8 @@ Blockly.bindEvent_ = function(node, name, thisObject, func) {
   };
 
   var bindData = [];
-  var window = goog.global['window'];
-  if (window && window.PointerEvent && (name in Blockly.Touch.TOUCH_MAP)) {
+  if (Blockly.utils.global['PointerEvent'] &&
+      (name in Blockly.Touch.TOUCH_MAP)) {
     for (var i = 0, type; type = Blockly.Touch.TOUCH_MAP[name][i]; i++) {
       node.addEventListener(type, wrapFunc, false);
       bindData.push([node, type, wrapFunc]);
@@ -584,6 +593,16 @@ Blockly.isNumber = function(str) {
 };
 
 /**
+ * Convert a hue (HSV model) into an RGB hex triplet.
+ * @param {number} hue Hue on a colour wheel (0-360).
+ * @return {string} RGB code, e.g. '#5ba65b'.
+ */
+Blockly.hueToHex = function(hue) {
+  return Blockly.utils.colour.hsvToHex(hue, Blockly.HSV_SATURATION,
+      Blockly.HSV_VALUE * 255);
+};
+
+/**
  * Checks old colour constants are not overwritten by the host application.
  * If a constant is overwritten, it prints a console warning directing the
  * developer to use the equivalent Msg constant.
@@ -630,7 +649,7 @@ Blockly.checkBlockColourConstants = function() {
  * Checks for a constant in the Blockly namespace, verifying it is undefined or
  * has the old/original value. Prints a warning if this is not true.
  * @param {string} msgName The Msg constant identifier.
- * @param {Array<string>} blocklyNamePath The name parts of the tested
+ * @param {Array.<string>} blocklyNamePath The name parts of the tested
  *     constant.
  * @param {number|undefined} expectedValue The expected value of the constant.
  * @private
@@ -654,18 +673,3 @@ Blockly.checkBlockColourConstant_ = function(
     console.warn(warning);
   }
 };
-
-// IE9 does not have a console.  Create a stub to stop errors.
-if (!goog.global['console']) {
-  goog.global['console'] = {
-    'log': function() {},
-    'warn': function() {}
-  };
-}
-
-// Export symbols that would otherwise be renamed by Closure compiler.
-if (!goog.global['Blockly']) {
-  goog.global['Blockly'] = {};
-}
-goog.global['Blockly']['getMainWorkspace'] = Blockly.getMainWorkspace;
-goog.global['Blockly']['addChangeListener'] = Blockly.addChangeListener;

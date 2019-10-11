@@ -1,9 +1,6 @@
 /**
  * @license
- * Visual Blocks Editor
- *
- * Copyright 2017 Google Inc.
- * https://developers.google.com/blockly/
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +30,8 @@
  */
 goog.provide('Blockly.Extensions');
 
-goog.require('Blockly.Mutator');
 goog.require('Blockly.utils');
+
 
 /**
  * The set of all registered extensions, keyed by extension name/id.
@@ -73,7 +70,7 @@ Blockly.Extensions.register = function(name, initFn) {
  *     registered.
  */
 Blockly.Extensions.registerMixin = function(name, mixinObj) {
-  if (!mixinObj || typeof mixinObj != 'object'){
+  if (!mixinObj || typeof mixinObj != 'object') {
     throw Error('Error: Mixin "' + name + '" must be a object');
   }
   Blockly.Extensions.register(name, function() {
@@ -114,6 +111,9 @@ Blockly.Extensions.registerMutator = function(name, mixinObj, opt_helperFn,
   // Sanity checks passed.
   Blockly.Extensions.register(name, function() {
     if (hasMutatorDialog) {
+      if (!Blockly.Mutator) {
+        throw Error(errorPrefix + 'Missing require for Blockly.Mutator');
+      }
       this.setMutator(new Blockly.Mutator(opt_blockList));
     }
     // Mixin the object.
@@ -123,6 +123,19 @@ Blockly.Extensions.registerMutator = function(name, mixinObj, opt_helperFn,
       opt_helperFn.apply(this);
     }
   });
+};
+
+/**
+ * Unregisters the extension registered with the given name.
+ * @param {string} name The name of the extension to unregister.
+ */
+Blockly.Extensions.unregister = function(name) {
+  if (Blockly.Extensions.ALL_[name]) {
+    delete Blockly.Extensions.ALL_[name];
+  } else {
+    console.warn('No extension mapping for name "' + name +
+        '" found to unregister');
+  }
 };
 
 /**
@@ -252,7 +265,7 @@ Blockly.Extensions.checkBlockHasMutatorProperties_ = function(errorPrefix,
 /**
  * Get a list of values of mutator properties on the given block.
  * @param {!Blockly.Block} block The block to inspect.
- * @return {!Array.<Object>} a list with all of the defined properties, which
+ * @return {!Array.<Object>} A list with all of the defined properties, which
  *     should be functions, but may be anything other than undefined.
  * @private
  */
@@ -339,7 +352,7 @@ Blockly.Extensions.buildTooltipForDropdown = function(dropdownName,
    * @this {Blockly.Block}
    */
   var extensionFn = function() {
-    if (this.type && blockTypesChecked.indexOf(this.type) === -1) {
+    if (this.type && blockTypesChecked.indexOf(this.type) == -1) {
       Blockly.Extensions.checkDropdownOptionsInTable_(
           this, dropdownName, lookupTable);
       blockTypesChecked.push(this.type);
@@ -349,7 +362,7 @@ Blockly.Extensions.buildTooltipForDropdown = function(dropdownName,
       var value = this.getFieldValue(dropdownName);
       var tooltip = lookupTable[value];
       if (tooltip == null) {
-        if (blockTypesChecked.indexOf(this.type) === -1) {
+        if (blockTypesChecked.indexOf(this.type) == -1) {
           // Warn for missing values on generated tooltips.
           var warning = 'No tooltip mapping for value ' + value +
               ' of field ' + dropdownName;
@@ -385,7 +398,7 @@ Blockly.Extensions.checkDropdownOptionsInTable_ = function(block, dropdownName,
       var optionKey = options[i][1];  // label, then value
       if (lookupTable[optionKey] == null) {
         console.warn('No tooltip mapping for value ' + optionKey +
-          ' of field ' + dropdownName + ' of block type ' + block.type);
+           ' of field ' + dropdownName + ' of block type ' + block.type);
       }
     }
   }
@@ -398,7 +411,7 @@ Blockly.Extensions.checkDropdownOptionsInTable_ = function(block, dropdownName,
  * @param {string} msgTemplate The template form to of the message text, with
  *     %1 placeholder.
  * @param {string} fieldName The field with the replacement text.
- * @returns {Function} The extension function.
+ * @return {Function} The extension function.
  */
 Blockly.Extensions.buildTooltipWithFieldText = function(msgTemplate,
     fieldName) {
