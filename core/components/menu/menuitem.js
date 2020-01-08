@@ -258,6 +258,29 @@ Blockly.MenuItem.prototype.setEnabled = function(enabled) {
  * @package
  */
 Blockly.MenuItem.prototype.handleClick = function(_e) {
+  var target = _e.currentTarget;
+  var parentMenu = this.getParent();
+
+  // If the menu or dropdown doesn't have enough room to draw itself above or
+  // below the menu trigger, it'll overlap the trigger. As this event is
+  // technically a mouse up event which will be processed at a different time by
+  // the event loop when the previous stack is empty, the menu / dropdown may
+  // already be drawn at this point, and considering this specific
+  // implementation doesn't match mouse up events to associated mouse down
+  // events, this means the event will propagate no matter what to the
+  // overlapping menuitem, making it behaves like the user explicitly selected
+  // it which would result in the menu not even be visible to the user (as when
+  // a menuitem is selected, the menu hides itself) and potentially (depending
+  // on the coordinates of the trigger and number of menuitems) selecting what
+  // could look like a random option. To avoid this, we stop propagating the
+  // event in this specific case.
+  if (target &&
+    target.classList.contains("focused") &&
+    this.isEnabled() &&
+    parentMenu.getHighlighted() === null) {
+    return;
+  }
+
   if (this.isEnabled()) {
     this.setHighlighted(true);
     this.performActionInternal();
